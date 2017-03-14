@@ -162,4 +162,13 @@ public class BinarySearchTest {
         //then:
         assertThat(sut.getPosition(),is(INDEX_NOT_FOUND));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumentException() throws Exception {
+        //given:
+        final int[] EMPTY_ARRAY = new int[]{};
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,EMPTY_ARRAY);
+    }
 }
