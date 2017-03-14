@@ -56,4 +56,20 @@ public class TestyV1 {
 		SearchResult result = BinarySearch.search(key, testSeq);
 		assertEquals(testSeq.length, result.getPosition());
 	}
+	
+	@Test
+	public void testKeyIsCenterElement() {
+		
+		int[] testSeq = {3, 4, 7};
+		int key = 4;
+		
+		assertTrue(testSeq.length > 1);
+		
+		SearchResult result = BinarySearch.search(key, testSeq);
+		int start = 0;
+		int end = testSeq.length - 1;
+		int center = (start + end) / 2;
+		
+		assertEquals(center+1, result.getPosition());
+	}
 }
