@@ -40,4 +40,11 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(LAST_ELEMENT, arrayUnderTest);
 		Assert.assertEquals(true, result.isFound());
 	}
+	
+	@org.junit.Test
+	public void testNr5() {
+		int [] arrayUnderTest = new int[]{ FIRST_ELEMENT, 2, 3, 4, MIDDLE_ELEMENT, 6, 7, 8, LAST_ELEMENT };
+		SearchResult result = BinarySearch.search(MIDDLE_ELEMENT, arrayUnderTest);
+		Assert.assertEquals(true, result.isFound());
+	}
 }
