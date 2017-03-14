@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class BinarySearchTest {
 
-    int element = 10;
+    int element = 1000;
     int seq[];
     SearchResult searchResult;
 
@@ -30,6 +30,18 @@ public class BinarySearchTest {
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is(false));
     }
+
+    @Test
+    public void elementIsFirstInSequency() throws Exception {
+
+        seq = new int[] {element, element + 4556, element + 3};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(0) );
+    }
+
+
+
 
 
 
