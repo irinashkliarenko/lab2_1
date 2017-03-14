@@ -18,7 +18,7 @@ public class BinarySearchTest {
 		Assert.assertTrue(searchResult.isFound());
 	}
 	@Test
-	public void testSeqOneElementKeyNotExists() {
+	public void testSeqOneElementKeyNotFound() {
 		int key = 4;
 		int seq[] = {1};
 		SearchResult searchResult = BinarySearch.search(key, seq);
@@ -30,7 +30,7 @@ public class BinarySearchTest {
 		int seq[] = {4,1};
 		SearchResult searchResult = BinarySearch.search(key, seq);
 		Assert.assertTrue(searchResult.isFound());
-		Assert.assertEquals(searchResult.getPosition(), 1);
+		Assert.assertEquals(seq[searchResult.getPosition()], key);
 	}
 	@Test
 	public void testSeqMoreElementsKeyLast() {
@@ -38,7 +38,7 @@ public class BinarySearchTest {
 		int seq[] = {2,1,4};
 		SearchResult searchResult = BinarySearch.search(key, seq);
 		Assert.assertTrue(searchResult.isFound());
-		Assert.assertEquals(searchResult.getPosition(), seq.length);
+		Assert.assertEquals(seq[searchResult.getPosition()], key);
 	}
 	@Test
 	public void testSeqMoreElementsKeyCenter() {
@@ -46,6 +46,14 @@ public class BinarySearchTest {
 		int seq[] = {2,1,4,3,6};
 		SearchResult searchResult = BinarySearch.search(key, seq);
 		Assert.assertTrue(searchResult.isFound());
-		Assert.assertEquals(searchResult.getPosition(), 3);
+		Assert.assertEquals(seq[searchResult.getPosition()], key);
+	}
+	@Test
+	public void testSeqMoreElementsKeyNotFound() {
+		int key = 5;
+		int seq[] = {2,1,4,3,6};
+		SearchResult searchResult = BinarySearch.search(key, seq);
+		Assert.assertFalse(searchResult.isFound());
+		Assert.assertEquals(searchResult.getPosition(), -1);
 	}
 }
