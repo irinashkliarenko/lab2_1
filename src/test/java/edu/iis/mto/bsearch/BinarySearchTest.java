@@ -21,10 +21,11 @@ public class BinarySearchTest {
 
     @Test
     public void isInputSeqFound() {
-        key = 1;
+        key = 4;
         seq = new int[] {1, 2, 4, 6};
 
-        assertEquals(true,BinarySearch.search(key, seq).isFound());
-        System.out.print(seq[1]);
+        assertTrue(BinarySearch.search(key, seq).isFound());
+        assertEquals(2,BinarySearch.search(key, seq).getPosition());
+        assertEquals(key,seq[2]);
     }
 }
