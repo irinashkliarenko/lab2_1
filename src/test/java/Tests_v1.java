@@ -56,13 +56,54 @@ public class Tests_v1 {
 
     @Test
     public void multipleElementsIsMiddle() {
-        int[] array = new int[10];
+        int[] array = new int[100];
         for (int i = 0; i < array.length; i++) {
             array[i] = i;
         }
 
-        assertThat(BinarySearch.search(4, array).isFound(), Matchers.is(true));
-        assertThat(BinarySearch.search(4, array).getPosition(), Matchers.is(4));
+        int middle = array.length / 2;
+
+        assertThat(BinarySearch.search(middle, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(middle, array).getPosition(), Matchers.is(middle));
+    }
+
+    @Test
+    public void multipleElementsIsMiddleNotEven() {
+        int[] array = new int[101];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        int middle = array.length / 2;
+
+        assertThat(BinarySearch.search(middle, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(middle, array).getPosition(), Matchers.is(middle));
+    }
+
+    @Test
+    public void multipleElementsIsMiddleMinusOne() {
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        int middle = array.length / 2;
+
+        assertThat(BinarySearch.search(middle - 1, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(middle - 1, array).getPosition(), Matchers.is(middle - 1));
+    }
+
+    @Test
+    public void multipleElementsIsMiddlePlusOne() {
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        int middle = array.length / 2;
+
+        assertThat(BinarySearch.search(middle + 1, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(middle + 1, array).getPosition(), Matchers.is(middle + 1));
     }
 
     @Test
