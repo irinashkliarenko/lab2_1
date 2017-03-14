@@ -57,4 +57,15 @@ public class Tests_v1 {
         assertTrue(BinarySearch.search(4, array).getPosition() == 4);
     }
 
+    @Test
+    public void multipleElementsNotPresent() {
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        assertFalse(BinarySearch.search(15, array).isFound());
+        assertTrue(BinarySearch.search(15, array).getPosition() == -1);
+    }
+
 }
