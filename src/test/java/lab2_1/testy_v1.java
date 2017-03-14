@@ -73,6 +73,19 @@ public class testy_v1 {
 	}
 	
 	
+	@Test
+	public void testKeyIsNotInTheSequenceWithLengthGreaterThanOne() {
+		
+		int key = 15;
+		int[] seq = { 4, 5, 6, 7, 8, 9, 10, 11};
+		
+		BinarySearch binarySearch = new BinarySearch();
+		SearchResult result = binarySearch.search(key, seq);
+		
+		assertEquals(-1, result.getPosition());
+		
+	}
+	
 	
 	
 }
