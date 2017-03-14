@@ -7,13 +7,24 @@ import edu.iis.mto.bsearch.*;
 
 public class BinarySearchTest {
 
-	private final int SEARCHED_VALUE = 3;
+	private final int IN_SEQUENCE     = 1;
+	private final int FIRST_ELEMENT   = 1;
+	private final int LAST_ELEMENT    = 5;
+	private final int MIDDLE_ELEMENT  = 9;
+	private final int NOT_IN_SEQUENCE = 10;
 	
 	@org.junit.Test
 	public void testNr1() {
-		int [] arrayUnderTest = new int[]{ SEARCHED_VALUE };
-		SearchResult result = BinarySearch.search(SEARCHED_VALUE, arrayUnderTest);
+		int [] arrayUnderTest = new int[]{ IN_SEQUENCE };
+		SearchResult result = BinarySearch.search(IN_SEQUENCE, arrayUnderTest);
 		Assert.assertEquals(true, result.isFound());
+	}
+	
+	@org.junit.Test
+	public void testNr2() {
+		int [] arrayUnderTest = new int[]{ IN_SEQUENCE };
+		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
+		Assert.assertEquals(false, result.isFound());
 	}
 
 }
