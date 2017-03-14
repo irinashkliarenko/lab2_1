@@ -118,4 +118,13 @@ public class BinarySearchTest {
 
         assertThat(result.getPosition(), is(EXPECTED_POSITION));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void notContainsAnyElement() {
+
+        final int KEY = 3;
+        final int[] ARRAY = {};
+
+        BinarySearch.search(KEY, ARRAY);
+    }
 }
