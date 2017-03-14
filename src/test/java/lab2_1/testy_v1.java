@@ -60,7 +60,17 @@ public class testy_v1 {
 		
 	}
 	
-	
+	@Test 
+	public void testIsKeyInTheMiddleOfTheSequence() {
+		
+		int key = 7;
+		int[] seq = { 4, 5, 6, 7, 8, 9, 10, 11};
+		
+		BinarySearch binarySearch = new BinarySearch();
+		SearchResult result = binarySearch.search(key, seq);
+		
+		assertEquals((seq.length/2), result.getPosition());
+	}
 	
 	
 	
