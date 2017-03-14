@@ -59,5 +59,13 @@ public class SearchResultTest {
         
         Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void emptySequenceTest() {
+        int key = 17;
+        int seq[] = {};
+        
+        Assert.assertTrue((BinarySearch.search(key, seq)).isFound());
+    }
 
 }
