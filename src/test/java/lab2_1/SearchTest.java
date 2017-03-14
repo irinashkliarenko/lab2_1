@@ -34,8 +34,12 @@ public class SearchTest {
 	@Test
 	public void testIsFirstElement() {
 		
-		boolean result = false;
-		Assert.assertEquals(false, result);
+		int key = 2;
+		int[] sequence = {2, 3, 4, 5, 6};
+		SearchResult searchResult = BinarySearch.search(key, sequence);
+		
+		int result = searchResult.getPosition();
+		Assert.assertEquals(1, result);
 	}
 	
 	@Test
