@@ -54,8 +54,8 @@ public class Tests_v1 {
             array[i] = i;
         }
 
-        assertTrue(BinarySearch.search(4, array).isFound());
-        assertTrue(BinarySearch.search(4, array).getPosition() == 4);
+        assertThat(BinarySearch.search(4, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(4, array).getPosition(), Matchers.is(4));
     }
 
     @Test
