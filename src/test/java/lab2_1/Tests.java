@@ -82,4 +82,13 @@ public class Tests {
 		}
 		assertThat(BinarySearch.search(24, tab).getPosition(), Matchers.equalTo(51 / 2 - 1));
 	}
+	
+	@Test
+	public void centerPlusOne() {
+		int[] tab = new int[51];
+		for(int a = 0; a < 51; a++) {
+			tab[a] = a;
+		}
+		assertThat(BinarySearch.search(26, tab).getPosition(), Matchers.equalTo(51 / 2 + 1));
+	}
 }
