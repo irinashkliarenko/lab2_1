@@ -44,4 +44,16 @@ public class TestyV1 {
 		SearchResult result = BinarySearch.search(key, testSeq);
 		assertEquals(1, result.getPosition());
 	}
+	
+	@Test
+	public void testKeyIsLastElement() {
+		
+		int[] testSeq = {3, 4, 7};
+		int key = 7;
+		
+		assertTrue(testSeq.length > 1);
+		
+		SearchResult result = BinarySearch.search(key, testSeq);
+		assertEquals(testSeq.length, result.getPosition());
+	}
 }
