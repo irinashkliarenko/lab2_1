@@ -64,4 +64,13 @@ public class Tests {
 		int[] tab = new int[0];
 		BinarySearch.search(200, tab);
 	}
+	
+	@Test
+	public void elementNotFoundgetPositionMinusOne() {
+		int[] tab = new int[4];
+		for(int a = 0; a < 4; a++) {
+			tab[a] = a;
+		}
+		assertTrue(BinarySearch.search(10, tab).getPosition() == -1);
+	}
 }
