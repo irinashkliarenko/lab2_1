@@ -53,5 +53,13 @@ public class TestV1 {
 		SearchResult result = BinarySearch.search(key, seq);
 		assertTrue(result.isFound());
 	}
+	@Test
+	public void notInLongerSequence() {
+		int[] seq = {1,2,3,4,5};
+		int key = 3;
+		
+		SearchResult result = BinarySearch.search(key, seq);
+		assertTrue(result.isFound());
+	}
 
 }
