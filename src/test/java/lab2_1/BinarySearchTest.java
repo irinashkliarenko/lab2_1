@@ -24,4 +24,12 @@ public class BinarySearchTest {
 		SearchResult searchResult = BinarySearch.search(key, seq);
 		Assert.assertFalse(searchResult.isFound());
 	}
+	@Test
+	public void testSeqMoreElementsKeyFirst() {
+		int key = 4;
+		int seq[] = {4,1};
+		SearchResult searchResult = BinarySearch.search(key, seq);
+		Assert.assertTrue(searchResult.isFound());
+		Assert.assertEquals(searchResult.getPosition(), 1);
+	}
 }
