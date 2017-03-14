@@ -58,4 +58,10 @@ public class Tests {
 		}
 		assertFalse(BinarySearch.search(10, tab).isFound());
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void zeroSequenceLength() {
+		int[] tab = new int[0];
+		BinarySearch.search(200, tab);
+	}
 }
