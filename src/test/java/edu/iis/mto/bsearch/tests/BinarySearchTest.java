@@ -32,5 +32,29 @@ public class BinarySearchTest {
 		assertTrue(!result.isFound());
 		assertEquals(position, result.getPosition());
 	}
+	
+	@Test
+	public void testBinarySearchCase3() {
+		//dlugosc sekwencji wejsciowej: >1
+		//element wyszukiwany: jest pierwszy w sekwencji
+		int key = 5;
+		int[] seq = {5, 8, 13, 24, 25};
+		int position = 1;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertTrue(result.isFound());
+		assertEquals(position, result.getPosition());
+	}
+	
+	@Test
+	public void testBinarySearchCase4() {
+		//dlugosc sekwencji wejsciowej: >1
+		//element wyszukiwany: jest ostatnim elementem
+		int[] seq = {5, 8, 13, 24, 25};
+		int key = seq[seq.length-1];
+		int position = seq.length;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertTrue(result.isFound());
+		assertEquals(position, result.getPosition());
+	}
 
 }
