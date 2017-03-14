@@ -16,7 +16,7 @@ public class BinarySearchTest {
     SearchResult searchResult;
 
     @Test
-    public void elementInSequency() throws Exception {
+    public void elementIsInSequency() throws Exception {
 
         seq = new int[] {element};
         searchResult = BinarySearch.search(element, seq);
@@ -34,10 +34,19 @@ public class BinarySearchTest {
     @Test
     public void elementIsFirstInSequency() throws Exception {
 
-        seq = new int[] {element, element + 4556, element + 3};
+        seq = new int[] {element, element + 1000, element + 2000};
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(0) );
+    }
+
+    @Test
+    public void elementIsLastInSequency() throws Exception {
+
+        seq = new int[] {element - 235, element - 56, element};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(seq.length-1) );
     }
 
 
