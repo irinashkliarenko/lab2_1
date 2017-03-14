@@ -21,9 +21,21 @@ public class BinarySearch {
 	 *         znaleziony -1)
 	 */
 	public static SearchResult search(int key, int[] seq) {
+	    Boolean flag;
 	    if(seq.length == 0) {
 	        throw new IllegalArgumentException();
-	    } 
+	    } else {
+	        for (int i = 0; i < seq.length - 1; i++) {
+	            if (seq[i] > seq[i + 1]) {
+	                flag = false; 
+	            }
+	        }
+	        flag = true; 
+	        
+	        if(flag == false) {
+	            System.out.println("Sequence is not sorted");
+	        }
+	    }
 	    
 	    
 	    

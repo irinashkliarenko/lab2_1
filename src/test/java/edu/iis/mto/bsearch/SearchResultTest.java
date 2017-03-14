@@ -11,8 +11,8 @@ public class SearchResultTest {
 
     @Test
     public void oneElementInSequenceIsFound() {
-        int key = 6;
-        int seq[] = {6};
+        int key = 1;
+        int seq[] = {1};
         
         Assert.assertTrue((BinarySearch.search(key, seq)).isFound());
     }
@@ -20,15 +20,15 @@ public class SearchResultTest {
     @Test
     public void oneElementInSequenceNotFound() {
         int key = 6;
-        int seq[] = {7};
+        int seq[] = {1};
         
         Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
     }
     
     @Test
     public void firstElementsInSequence() {
-        int key = 2;
-        int seq[] = {2, 3, 4, 7};
+        int key = 1;
+        int seq[] = {1, 2, 3, 4, 7};
         int fisrtElement = seq.length - (seq.length-1);
         
         Assert.assertEquals(fisrtElement, BinarySearch.search(key, seq).getPosition());
@@ -37,7 +37,7 @@ public class SearchResultTest {
     @Test
     public void lastElementsInSequence() {
         int key = 7;
-        int seq[] = {2, 3, 4, 7};
+        int seq[] = {1, 2, 3, 4, 7};
         int lastElement = seq.length;
         
         Assert.assertEquals(lastElement, BinarySearch.search(key, seq).getPosition());
@@ -45,8 +45,8 @@ public class SearchResultTest {
     
     @Test
     public void middleElementsInSequence() {
-        int key = 4;
-        int seq[] = {2, 3, 4, 7, 10};
+        int key = 3;
+        int seq[] = {1, 2, 3, 4, 7};
         int middleElement = seq.length/2 + 1;
         
         Assert.assertEquals(middleElement, BinarySearch.search(key, seq).getPosition());
@@ -55,7 +55,7 @@ public class SearchResultTest {
     @Test
     public void manyElementsInSequenceElementNotFound() {
         int key = 17;
-        int seq[] = {2, 3, 4, 7, 10};
+        int seq[] = {1, 2, 3, 4, 7};
         
         Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
     }
