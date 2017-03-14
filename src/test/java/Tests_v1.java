@@ -24,4 +24,15 @@ public class Tests_v1 {
         assertTrue(BinarySearch.search(15, array).getPosition() == -1);
     }
 
+    @Test
+    public void multipleElementsIsFirst() {
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        assertTrue(BinarySearch.search(0, array).isFound());
+        assertTrue(BinarySearch.search(0, array).getPosition() == 0);
+    }
+
 }
