@@ -16,7 +16,6 @@ public class TestyV1 {
 	@Test
 	public void testKeyIsFoundInSeqWithOneElement() {
 		
-		int[] testSeq = {1};
 		int key = 1;
 		
 		assertTrue(testSeq.length == 1);
@@ -28,7 +27,6 @@ public class TestyV1 {
 	@Test
 	public void testKeyIsNotFoundInSeqWithOneElement() {
 		
-		int[] testSeq = {1};
 		int key = 2;
 		
 		assertTrue(testSeq.length == 1);
@@ -40,7 +38,6 @@ public class TestyV1 {
 	@Test
 	public void testKeyIsFirstElementInSeqWithManyElements() {
 		
-		int[] testSeq = {3, 4};
 		int key = 3;
 		
 		assertTrue(testSeq.length > 1);
@@ -52,7 +49,6 @@ public class TestyV1 {
 	@Test
 	public void testKeyIsLastElementInSeqWithManyElements() {
 		
-		int[] testSeq = {3, 4, 7};
 		int key = 7;
 		
 		assertTrue(testSeq.length > 1);
@@ -64,7 +60,6 @@ public class TestyV1 {
 	@Test
 	public void testKeyIsCenterElementInSeqWithManyElements() {
 		
-		int[] testSeq = {3, 4, 7};
 		int key = 4;
 		
 		assertTrue(testSeq.length > 1);
@@ -79,7 +74,7 @@ public class TestyV1 {
 	
 	@Test
 	public void testKeyIsNotFoundInSeqWithManyElements() {
-		int[] testSeq = {3, 4, 7};
+
 		int key = 5;
 		
 		assertTrue(testSeq.length > 1);
