@@ -46,4 +46,15 @@ public class Tests_v1 {
         assertTrue(BinarySearch.search(9, array).getPosition() == 9);
     }
 
+    @Test
+    public void multipleElementsIsMiddle() {
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        assertTrue(BinarySearch.search(4, array).isFound());
+        assertTrue(BinarySearch.search(4, array).getPosition() == 4);
+    }
+
 }
