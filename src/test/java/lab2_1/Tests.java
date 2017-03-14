@@ -75,5 +75,22 @@ public class Tests {
 		int[] array = new int[0];
 		BinarySearch.search(0, array);
 	}
-
+	
+	@Test
+	public void centerMinusOne() {
+		int[] array = new int[101];
+		for(int i = 0; i < 101; i++) {
+			array[i] = i;
+		}
+		assertThat(BinarySearch.search(49, array).getPosition(), Matchers.equalTo(101/2-1));
+	}
+	
+	@Test
+	public void centePlusOne() {
+		int[] array = new int[101];
+		for(int i = 0; i < 101; i++) {
+			array[i] = i;
+		}
+		assertThat(BinarySearch.search(51, array).getPosition(), Matchers.equalTo(101/2+1));
+	}
 }
