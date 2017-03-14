@@ -16,7 +16,7 @@ public class BinarySearchTest {
     SearchResult searchResult;
 
     @Test
-    public void elementIsInSequency() throws Exception {
+    public void elementIsInSequence() throws Exception {
 
         seq = new int[] {element};
         searchResult = BinarySearch.search(element, seq);
@@ -24,7 +24,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsNotInSequency() throws Exception {
+    public void elementIsNotInSequence() throws Exception {
 
         seq = new int[] {element - 1};
         searchResult = BinarySearch.search(element, seq);
@@ -32,7 +32,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsFirstInSequency() throws Exception {
+    public void elementIsFirstInSequence() throws Exception {
 
         seq = new int[] {element, element + 1000, element + 2000};
         searchResult = BinarySearch.search(element, seq);
@@ -41,7 +41,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsLastInSequency() throws Exception {
+    public void elementIsLastInSequence() throws Exception {
 
         seq = new int[] {element - 235, element - 56, element};
         searchResult = BinarySearch.search(element, seq);
@@ -50,11 +50,20 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsCenterInSequency() throws Exception {
+    public void elementIsCenterInSequence() throws Exception {
 
         seq = new int[] {element - 235, element, element + 56, element + 666};
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is((seq.length-1)/2) );
+    }
+
+    @Test
+    public void elementIsNotEqualTooAnyOfElementsInSequence() throws Exception {
+
+        seq = new int[] {element - 235, element - 53, element + 56, element + 666};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is(false));
         assertThat(searchResult.getPosition(), is((seq.length-1)/2) );
     }
 
