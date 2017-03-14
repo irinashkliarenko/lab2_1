@@ -2,6 +2,7 @@ package edu.iis.mto.bsearch;
 
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 /**
@@ -14,8 +15,8 @@ public class BinarySearchTest {
         int element = 11;
         int [] tab = new int [] {element};
         SearchResult searchResult = BinarySearch.search(element, tab);
-        assertTrue(searchResult.isFound());
-        assertEquals(0, searchResult.getPosition());
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (0));
     }
 
     @Test
@@ -23,8 +24,8 @@ public class BinarySearchTest {
         int element = 11;
         int [] tab = new int [] {10};
         SearchResult searchResult = BinarySearch.search(element,tab);
-        assertFalse(searchResult.isFound());
-        assertEquals(-1, searchResult.getPosition());
+        assertThat(searchResult.isFound(), is (false));
+        assertThat(searchResult.getPosition(), is (-1));
     }
 
     @Test
@@ -32,8 +33,8 @@ public class BinarySearchTest {
         int element = 11;
         int [] tab = new int [] {element, 12, 1};
         SearchResult searchResult = BinarySearch.search(element,tab);
-        assertTrue(searchResult.isFound());
-        assertEquals(0, searchResult.getPosition());
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (0));
     }
 
     @Test
@@ -41,8 +42,8 @@ public class BinarySearchTest {
         int element = 11;
         int [] tab = new int [] {1, 2, 3, element};
         SearchResult searchResult = BinarySearch.search(element,tab);
-        assertTrue(searchResult.isFound());
-        assertEquals(tab.length-1, searchResult.getPosition());
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (tab.length-1));
     }
 
     @Test
@@ -50,8 +51,9 @@ public class BinarySearchTest {
         int element = 11;
         int [] tab = new int [] {1, 2, element, 4, 10};
         SearchResult searchResult = BinarySearch.search(element,tab);
-        assertTrue(searchResult.isFound());
-        assertEquals(2, searchResult.getPosition());
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (2));
+
     }
 
     @Test
@@ -59,8 +61,8 @@ public class BinarySearchTest {
         int element = 11;
         int [] tab = new int [] {1, 2, 3, 191};
         SearchResult searchResult = BinarySearch.search(element,tab);
-        assertFalse(searchResult.isFound());
-        assertEquals(-1, searchResult.getPosition());
+        assertThat(searchResult.isFound(), is (false));
+        assertThat(searchResult.getPosition(), is (-1));
     }
 
 }
