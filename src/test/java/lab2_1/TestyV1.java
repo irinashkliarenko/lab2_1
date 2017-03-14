@@ -14,7 +14,7 @@ public class TestyV1 {
 	private final int[] seqWithManyElements = {1,3,5};
 	
 	@Test
-	public void testKeyIsInSequence() {
+	public void testKeyIsFoundInSeqWithOneElement() {
 		
 		int[] testSeq = {1};
 		int key = 1;
