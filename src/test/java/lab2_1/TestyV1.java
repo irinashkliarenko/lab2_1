@@ -18,9 +18,9 @@ public class TestyV1 {
 		
 		int key = 1;
 		
-		assertTrue(testSeq.length == 1);
+		assertTrue(seqWithOneElement.length == 1);
 		
-		SearchResult result = BinarySearch.search(key, testSeq);
+		SearchResult result = BinarySearch.search(key, seqWithOneElement);
 		assertTrue(result.isFound());
 	}
 	
@@ -29,9 +29,9 @@ public class TestyV1 {
 		
 		int key = 2;
 		
-		assertTrue(testSeq.length == 1);
+		assertTrue(seqWithOneElement.length == 1);
 		
-		SearchResult result = BinarySearch.search(key, testSeq);
+		SearchResult result = BinarySearch.search(key, seqWithOneElement);
 		assertFalse(result.isFound());
 	}
 	
@@ -40,9 +40,9 @@ public class TestyV1 {
 		
 		int key = 3;
 		
-		assertTrue(testSeq.length > 1);
+		assertTrue(seqWithManyElements.length > 1);
 		
-		SearchResult result = BinarySearch.search(key, testSeq);
+		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertEquals(1, result.getPosition());
 	}
 	
@@ -51,10 +51,10 @@ public class TestyV1 {
 		
 		int key = 7;
 		
-		assertTrue(testSeq.length > 1);
+		assertTrue(seqWithManyElements.length > 1);
 		
-		SearchResult result = BinarySearch.search(key, testSeq);
-		assertEquals(testSeq.length, result.getPosition());
+		SearchResult result = BinarySearch.search(key, seqWithManyElements);
+		assertEquals(seqWithManyElements.length, result.getPosition());
 	}
 	
 	@Test
@@ -62,11 +62,11 @@ public class TestyV1 {
 		
 		int key = 4;
 		
-		assertTrue(testSeq.length > 1);
+		assertTrue(seqWithManyElements.length > 1);
 		
-		SearchResult result = BinarySearch.search(key, testSeq);
+		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		int start = 0;
-		int end = testSeq.length - 1;
+		int end = seqWithManyElements.length - 1;
 		int center = (start + end) / 2;
 		
 		assertEquals(center+1, result.getPosition());
@@ -77,9 +77,9 @@ public class TestyV1 {
 
 		int key = 5;
 		
-		assertTrue(testSeq.length > 1);
+		assertTrue(seqWithManyElements.length > 1);
 		
-		SearchResult result = BinarySearch.search(key, testSeq);
+		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertFalse(result.isFound());
 	}
 }
