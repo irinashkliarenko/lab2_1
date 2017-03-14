@@ -55,4 +55,17 @@ public class BinarySearchTest {
 
         Assert.assertEquals(POSITION, result.getPosition());
     }
+
+    @Test
+    public void elementIsFirstInArray() {
+
+        final int KEY = 3;
+        final int[] ARRAY = {KEY, 4, 5, 6};
+        final int EXPECTED_POSITION = 0;
+
+        SearchResult result = BinarySearch.search(KEY, ARRAY);
+
+        Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
+
+    }
 }
