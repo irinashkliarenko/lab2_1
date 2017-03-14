@@ -43,8 +43,8 @@ public class Tests_v1 {
             array[i] = i;
         }
 
-        assertTrue(BinarySearch.search(9, array).isFound());
-        assertTrue(BinarySearch.search(9, array).getPosition() == 9);
+        assertThat(BinarySearch.search(array.length - 1, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(array.length - 1, array).getPosition(), Matchers.is(array.length - 1));
     }
 
     @Test
