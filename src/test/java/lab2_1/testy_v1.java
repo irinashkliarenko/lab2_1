@@ -2,15 +2,17 @@ package lab2_1;
 
 import static org.junit.Assert.*;
 
-
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 
+
 public class testy_v1 {
 
+	int[] seq = {  3, 4, 5, 6,  7, 8, 9, 10, 11, 12};
+	
 	@Test
 	public void testIsKeyInTheSequence() {
 		
@@ -20,6 +22,8 @@ public class testy_v1 {
 		SearchResult result = binarySearch.search(key, seq);
 		
 		assertTrue(result.isFound());
+		
+		
 	}
 	
 	
@@ -38,8 +42,7 @@ public class testy_v1 {
 	@Test
 	public void testIsKeyFirstInTheSequence() {
 		
-		int key = 2;
-		int[] seq = { 2 , 3 , 4 , 5 ,  6, 7 };
+		int key = 3;
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
@@ -50,8 +53,7 @@ public class testy_v1 {
 	@Test
 	public void testIsKeyLastInTheSequence() {
 		
-		int key = 7;
-		int[] seq = { 2, 3, 4, 5, 6, 7 } ;
+		int key = 12;
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
@@ -64,8 +66,6 @@ public class testy_v1 {
 	public void testIsKeyInTheMiddleOfTheSequence() {
 		
 		int key = 7;
-		int[] seq = { 4, 5, 6, 7, 8, 9, 10, 11};
-		
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
@@ -77,8 +77,6 @@ public class testy_v1 {
 	public void testKeyIsNotInTheSequenceWithLengthGreaterThanOne() {
 		
 		int key = 15;
-		int[] seq = { 4, 5, 6, 7, 8, 9, 10, 11};
-		
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
