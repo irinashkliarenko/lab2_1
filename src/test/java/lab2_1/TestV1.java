@@ -35,5 +35,14 @@ public class TestV1 {
 		SearchResult result = BinarySearch.search(key, seq);
 		assertTrue(result.isFound());
 	}
+	
+	@Test
+	public void lastElementInSequence() {
+		int[] seq = {1,2,3,4,5};
+		int key = 5;
+		
+		SearchResult result = BinarySearch.search(key, seq);
+		assertTrue(result.isFound());
+	}
 
 }
