@@ -59,5 +59,11 @@ public class TestV1 {
 		}
 		assertFalse(BinarySearch.search(9, array).isFound());
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void seq0() {
+		int[] array = new int[0];
+		BinarySearch.search(0, array);
+	}
 
 }
