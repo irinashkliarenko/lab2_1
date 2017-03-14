@@ -35,4 +35,23 @@ public class testy_v1 {
 		
 	}
 	
+	@Test
+	public void keyIsFirstInTheSequence() {
+		
+		int key = 2;
+		int[] seq = { 2 , 3 , 4 , 5 ,  6, 7 };
+		BinarySearch binarySearch = new BinarySearch();
+		SearchResult result = binarySearch.search(key, seq);
+		
+		assertTrue(result.isFound());
+		assertEquals(1, result.getPosition());
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 }
