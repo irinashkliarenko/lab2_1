@@ -47,4 +47,15 @@ public class BinarySearchTest {
         Assert.assertTrue(result.isFound());
         Assert.assertEquals(EXPECTED_VALUE, result.getPosition());
     }
+
+    @Test
+    public void testValueIsCenterElementInSeq() {
+        int[] seq = {1, 2, 3};
+        int value = 2;
+        final int EXPECTED_VALUE = 1;
+
+        SearchResult result = BinarySearch.search(value, seq);
+        Assert.assertTrue(result.isFound());
+        Assert.assertEquals(EXPECTED_VALUE, result.getPosition());
+    }
 }
