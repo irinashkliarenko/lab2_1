@@ -7,7 +7,7 @@ import org.junit.Test;
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 
-public class Tests {
+public class Testy_v1 {
 
 	@Test
 	public void inSequenceLength1() {
@@ -53,22 +53,8 @@ public class Tests {
 		SearchResult result = BinarySearch.search(key, seq);
 		assertTrue(result.isFound());
 	}
-	@Test
-	public void notInLongerSequence() {
-		int[] seq = {1,2,3,4,5};
-		int key = 3;
-		
-		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
-	}
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void emptySequence() {
-		int[] seq = {};
-		int key = 3;
-		
-		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
-	}
+	
+
 
 }
