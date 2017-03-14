@@ -30,7 +30,7 @@ public class BinarySearchTest {
     @Test
     public void moreElements_First() throws Exception{
         int element = 11;
-        int [] tab = new int [] {11, 12, 1};
+        int [] tab = new int [] {element, 12, 1};
         SearchResult searchResult = BinarySearch.search(element,tab);
         assertTrue(searchResult.isFound());
         assertEquals(0, searchResult.getPosition());
@@ -39,9 +39,19 @@ public class BinarySearchTest {
     @Test
     public void moreElements_Last() throws Exception{
         int element = 11;
-        int [] tab = new int [] {1, 2, 3, 11};
+        int [] tab = new int [] {1, 2, 3, element};
         SearchResult searchResult = BinarySearch.search(element,tab);
         assertTrue(searchResult.isFound());
         assertEquals(tab.length-1, searchResult.getPosition());
     }
+
+    @Test
+    public void moreElements_Centered() throws Exception{
+        int element = 11;
+        int [] tab = new int [] {1, 2, element, 4, 10};
+        SearchResult searchResult = BinarySearch.search(element,tab);
+        assertTrue(searchResult.isFound());
+        assertEquals(2, searchResult.getPosition());
+    }
+
 }
