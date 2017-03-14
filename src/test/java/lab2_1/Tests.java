@@ -79,4 +79,15 @@ public class Tests {
 		int[] seq = new int[0];
 		BinarySearch.search(2, seq);
 	}
+	
+	@Test
+	public void getPositionForNotFoundElementReturnsNegativeOne() {
+		int[] seq = new int[10];
+		
+		for(int i : seq) {
+			seq[i] = 0;
+		}
+		
+		assertTrue(BinarySearch.search(12, seq).getPosition() == -1);
+	}
 }
