@@ -78,4 +78,14 @@ public class BinarySearchTest {
         final int key = 1;
         BinarySearch.search(key, seq);
     }
+
+    @Test
+    public void binarySearchCheckSubOnePlusSeqLenght(){
+        final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
+        final int key = 4;
+        final int position = 7 / 2 - 1;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(position));
+    }
 }
