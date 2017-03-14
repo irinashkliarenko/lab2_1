@@ -8,7 +8,11 @@ import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 
 public class TestyV1 {
-
+	
+	private int[] seqWithZeroElements;
+	private int[] seqWithOneElement;
+	private int[] seqWithManyElements;
+	
 	@Test
 	public void testKeyIsInSequence() {
 		
