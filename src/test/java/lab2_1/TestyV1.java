@@ -26,7 +26,7 @@ public class TestyV1 {
 	}
 	
 	@Test
-	public void testKeyIsNotInSequence() {
+	public void testKeyIsNotFoundInSeqWithOneElement() {
 		
 		int[] testSeq = {1};
 		int key = 2;
