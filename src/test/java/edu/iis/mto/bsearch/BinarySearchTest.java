@@ -43,4 +43,16 @@ public class BinarySearchTest {
         assertEquals(0, result.getPosition());
 
     }
+
+    @Test
+    public void testSearch_ManyElements_LastOne() throws Exception {
+        int searched = 69;
+        int[] seq = new int[]{5, 10, 15, searched};
+
+        SearchResult result = BinarySearch.search(searched, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(seq.length - 1, result.getPosition());
+
+    }
 }
