@@ -25,6 +25,12 @@ public class SearchResultTest {
         Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
     }
     
-
+    @Test
+    public void FirstElementsInSequence() {
+        int key = 2;
+        int seq[] = {2, 3, 4, 7};
+        Assert.assertTrue(BinarySearch.search(key, seq).isFound());
+        Assert.assertEquals(1, BinarySearch.search(key, seq).getPosition());
+    }
 
 }
