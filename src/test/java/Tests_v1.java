@@ -35,4 +35,15 @@ public class Tests_v1 {
         assertTrue(BinarySearch.search(0, array).getPosition() == 0);
     }
 
+    @Test
+    public void multipleElementsIsLast() {
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        assertTrue(BinarySearch.search(9, array).isFound());
+        assertTrue(BinarySearch.search(9, array).getPosition() == 9);
+    }
+
 }
