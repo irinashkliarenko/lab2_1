@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  * Created by 194974 on 3/14/2017.
  */
 public class BinarySearchTest {
-
+    
     @Test
     public void oneElement_In() throws Exception {
         int element = 11;
@@ -63,6 +63,13 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(element,tab);
         assertThat(searchResult.isFound(), is (false));
         assertThat(searchResult.getPosition(), is (-1));
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void noElements() throws Exception{
+        int element = 11;
+        int [] tab = new int [0];
+        BinarySearch.search(element,tab);
     }
 
 }
