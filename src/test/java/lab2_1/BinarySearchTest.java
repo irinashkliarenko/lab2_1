@@ -1,5 +1,7 @@
 package lab2_1;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,8 +11,7 @@ public class BinarySearchTest {
 	
 	private BinarySearch binarySearch;
 	private int key;
-	private int[] seq1;
-	private int[] seq2;
+	private int[] seq;
 
 	@Before
 	public void setup(){
@@ -18,7 +19,10 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void sequenceSortTest(){
+	public void searchTest(){
+		seq = new int[] {1, 2, 3, 4, 5};
+		key = 5;
 		
+		assertTrue(binarySearch.search(key, seq).isFound());
 	}
 }
