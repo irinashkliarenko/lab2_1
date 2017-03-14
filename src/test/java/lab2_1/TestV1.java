@@ -48,8 +48,16 @@ public class TestV1 {
 		for(int i = 0; i < 9; i++) {
 			array[i] = i;
 		}
-
 		assertTrue(BinarySearch.search(4, array).getPosition() == (array.length/2+1));
+	}
+	
+	@Test
+	public void multipleSeqNotPresent() {
+		int [] array = new int[9];
+		for(int i = 0; i < 9; i++) {
+			array[i] = i;
+		}
+		assertFalse(BinarySearch.search(9, array).isFound());
 	}
 
 }
