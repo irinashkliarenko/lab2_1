@@ -10,7 +10,6 @@ import edu.iis.mto.bsearch.SearchResult;
 
 public class TestyV1 {
 	
-	private final int[] seqWithZeroElements = {};
 	private final int[] seqWithOneElement = {1};
 	private final int[] seqWithManyElements = {1,3,5};
 	
