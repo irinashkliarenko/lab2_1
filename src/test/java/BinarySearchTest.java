@@ -36,4 +36,15 @@ public class BinarySearchTest {
         Assert.assertTrue(result.isFound());
         Assert.assertEquals(EXPECTED_VALUE, result.getPosition());
     }
+
+    @Test
+    public void testValueIsLastElementInSeq() {
+        int[] seq = {1, 2, 3};
+        int value = 3;
+        final int EXPECTED_VALUE = seq.length - 1;
+
+        SearchResult result = BinarySearch.search(value, seq);
+        Assert.assertTrue(result.isFound());
+        Assert.assertEquals(EXPECTED_VALUE, result.getPosition());
+    }
 }
