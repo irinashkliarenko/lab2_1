@@ -84,4 +84,15 @@ public class BinarySearchTest {
     public void testSearch_ExceptionWhenEmptySequence() throws Exception {
         BinarySearch.search(5, new int[0]);
     }
+
+    @Test
+    public void testSearch_ElementPresent_InTheMiddle() throws Exception {
+        int searched = 169;
+        int[] seq = new int[]{searched -3, searched -2, searched -1, searched, searched + 1, searched + 2, searched + 3};
+
+        SearchResult result = BinarySearch.search(searched, seq);
+
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), equalTo(3));
+    }
 }
