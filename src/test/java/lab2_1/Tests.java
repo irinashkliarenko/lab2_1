@@ -49,4 +49,13 @@ public class Tests {
 		}
 		assertTrue(BinarySearch.search(4, tab).getPosition() == tab.length / 2);
 	}
+	
+	@Test
+	public void seqMore1absent() {
+		int[] tab = new int[4];
+		for(int a = 0; a < 4; a++) {
+			tab[a] = a;
+		}
+		assertFalse(BinarySearch.search(10, tab).isFound());
+	}
 }
