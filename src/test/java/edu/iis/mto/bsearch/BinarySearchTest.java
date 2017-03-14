@@ -31,7 +31,7 @@ public class BinarySearchTest {
     @Test
     public void moreElements_First() throws Exception{
         int element = 11;
-        int [] tab = new int [] {element, 12, 1};
+        int [] tab = new int [] {element, 12, 13};
         SearchResult searchResult = BinarySearch.search(element,tab);
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (0));
@@ -49,7 +49,7 @@ public class BinarySearchTest {
     @Test
     public void moreElements_Centered() throws Exception{
         int element = 11;
-        int [] tab = new int [] {1, 2, element, 4, 10};
+        int [] tab = new int [] {1, 2, element, 14, 210};
         SearchResult searchResult = BinarySearch.search(element,tab);
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (2));
@@ -75,10 +75,18 @@ public class BinarySearchTest {
     @Test
     public void Element_InTheCentre() throws Exception {
         int element = 11;
-        int [] tab = new int [] {1, 2, element, 3, 5};
+        int [] tab = new int [] {1, 2, element, 13, 15};
         SearchResult searchResult = BinarySearch.search(element, tab);
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (2));
-        
+    }
+
+    @Test
+    public void Element_InTheCentreMin() throws Exception {
+        int element = 11;
+        int [] tab = new int [] {1, element, 12, 13, 15};
+        SearchResult searchResult = BinarySearch.search(element, tab);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (1));
     }
 }
