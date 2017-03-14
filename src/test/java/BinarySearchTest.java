@@ -3,6 +3,10 @@ import edu.iis.mto.bsearch.SearchResult;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 /**
  * Created by Piotr on 14.03.2017.
  */
@@ -16,7 +20,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertTrue(result.isFound());
+        assertThat(result.isFound(),is(true));
     }
 
     @Test
@@ -28,7 +32,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertEquals(POSITION, result.getPosition());
+        assertThat(result.getPosition(),is(POSITION));
     }
 
     @Test
@@ -40,7 +44,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY2, ARRAY);
 
-        Assert.assertFalse(result.isFound());
+        assertThat(result.isFound(),is(false));
     }
 
     @Test
@@ -53,7 +57,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY2, ARRAY);
 
-        Assert.assertEquals(POSITION, result.getPosition());
+        assertThat(result.getPosition(), is(POSITION));
     }
 
     @Test
@@ -65,7 +69,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
+        assertThat(result.getPosition(), is(EXPECTED_POSITION));
     }
 
     @Test
@@ -77,7 +81,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
+        assertThat(result.getPosition(), is(EXPECTED_POSITION));
     }
 
     @Test
@@ -89,7 +93,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
+        assertThat(result.getPosition(), is(EXPECTED_POSITION));
     }
 
     @Test
@@ -100,7 +104,7 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertFalse(result.isFound());
+        assertThat(result.isFound(), is(false));
     }
 
     @Test
@@ -112,8 +116,6 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
-        Assert.assertEquals(EXPECTED_POSITION,-1);
+        assertThat(result.getPosition(), is(EXPECTED_POSITION));
     }
-
-
 }
