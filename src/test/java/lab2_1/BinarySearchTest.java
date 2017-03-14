@@ -13,7 +13,7 @@ import static org.hamcrest.core.Is.is;
 public class BinarySearchTest {
 	
     @Test
-    public void checkIfKeyIsInOneSignSeq(){
+    public void checkIfKeyIsInOneSignSeq() throws Exception{
 	    final int seq[] = new int[]{4};
         final int key = 4;
         final int position = 1;
@@ -23,7 +23,7 @@ public class BinarySearchTest {
     }
 
 	@Test
-	public void checkIfKeyIsNotInOneSignSeq(){
+	public void checkIfKeyIsNotInOneSignSeq() throws Exception{
         final int seq[] = new int[]{4};
         final int key = 1;
         final int position = -1;
@@ -33,7 +33,7 @@ public class BinarySearchTest {
 	}
 
 	@Test
-    public void checkIfKeyIsFirstElementOfSeq(){
+    public void checkIfKeyIsFirstElementOfSeq() throws Exception{
         final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
         final int key = 2;
         final int position = 1;
@@ -43,7 +43,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void checkIfKeyIsLastElementOfSeq(){
+    public void checkIfKeyIsLastElementOfSeq() throws Exception{
         final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
         final int key = 24;
         final int position = 7;
@@ -53,7 +53,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void checkIfKeyIsMiddleElementOfSeq(){
+    public void checkIfKeyIsMiddleElementOfSeq() throws Exception{
         final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
         final int key = 8;
         final int position = 4;
@@ -63,7 +63,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void checkIfKeyIsNotInSeq(){
+    public void checkIfKeyIsNotInSeq() throws Exception{
         final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
         final int key = 25;
         final int position = -1;
