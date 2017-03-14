@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
 
-public class TestV1 {
+public class Tests {
 	
 	@Test
 	public void seq1Present() {
