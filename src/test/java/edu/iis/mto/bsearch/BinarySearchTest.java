@@ -106,4 +106,15 @@ public class BinarySearchTest {
         assertThat(result.isFound(), is(true));
         assertThat(result.getPosition(), equalTo(1));
     }
+
+    @Test
+    public void testSearch_ElementPresent_MiddlePlusOne() throws Exception {
+        int searched = 31;
+        int[] seq = new int[]{searched - 4, searched - 2, searched - 1, searched, searched + 3};
+
+        SearchResult result = BinarySearch.search(searched, seq);
+
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), equalTo(3));
+    }
 }
