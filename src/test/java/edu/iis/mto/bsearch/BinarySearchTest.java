@@ -7,13 +7,15 @@ import static org.junit.Assert.*;
 /**
  * Created by Konrad Gos on 14.03.2017.
  */
-public class SearchResultTest {
+public class BinarySearchTest {
 
-    private SearchResult searchResult;
-
+    private BinarySearch binarySearch;
+    private int key;
+    private int[] seq;
+    
     @Before
     public void setUp() throws Exception {
-        searchResult = new SearchResult();
+        binarySearch = new BinarySearch();
     }
 
 }
