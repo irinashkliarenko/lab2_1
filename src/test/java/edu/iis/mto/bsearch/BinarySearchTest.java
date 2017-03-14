@@ -171,4 +171,54 @@ public class BinarySearchTest {
         //when:
         SearchResult sut = BinarySearch.search(ANY_KEY,EMPTY_ARRAY);
     }
+
+    @Test
+    public void shouldFindElementWhichIsBeforeMiddleOfArray() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,ANY_KEY,18,20,22};
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.isFound(),is(true));
+    }
+
+    @Test
+    public void shouldReturnProperPositionOfElement() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,ANY_KEY,18,20,22};
+        final int EXPECTED_KEY_POSITION = 1;
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
+    }
+
+    @Test
+    public void shouldFindElementWhichIsAfterMiddleOfArray() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,2,10,ANY_KEY,20,22};
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.isFound(),is(true));
+    }
+
+    @Test
+    public void shouldReturnProperPosition() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,2,10,ANY_KEY,20,22};
+        final int EXPECTED_KEY_POSITION = 3;
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
+    }
 }
