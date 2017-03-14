@@ -89,4 +89,13 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (1));
     }
+
+    @Test
+    public void Element_InTheCentrePlus() throws Exception {
+        int element = 11;
+        int [] tab = new int [] {1, 2, 3, element, 15};
+        SearchResult searchResult = BinarySearch.search(element, tab);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (3));
+    }
 }
