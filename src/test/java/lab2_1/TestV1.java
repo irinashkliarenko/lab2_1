@@ -41,5 +41,15 @@ public class TestV1 {
 		}
 		assertTrue(BinarySearch.search(9, array).getPosition() == array.length);
 	}
+	
+	@Test
+	public void multipleSeqIsMiddle() {
+		int [] array = new int[9];
+		for(int i = 0; i < 9; i++) {
+			array[i] = i;
+		}
+
+		assertTrue(BinarySearch.search(4, array).getPosition() == (array.length/2+1));
+	}
 
 }
