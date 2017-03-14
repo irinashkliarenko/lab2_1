@@ -30,4 +30,29 @@ public class BinarySearchTest {
 
         Assert.assertEquals(POSITION, result.getPosition());
     }
+
+    @Test
+    public void notcontainsElementInArray (){
+
+        final int KEY = 3;
+        final int KEY2 = 5;
+        final int[] ARRAY = {KEY};
+
+        SearchResult result = BinarySearch.search(KEY2, ARRAY);
+
+        Assert.assertFalse(result.isFound());
+    }
+
+    @Test
+    public void notcontainsElementInArrayOnPosition() {
+
+        final int KEY = 3;
+        final int KEY2 = 5;
+        final int[] ARRAY = {KEY};
+        final int POSITION = -1;
+
+        SearchResult result = BinarySearch.search(KEY2, ARRAY);
+
+        Assert.assertEquals(POSITION, result.getPosition());
+    }
 }
