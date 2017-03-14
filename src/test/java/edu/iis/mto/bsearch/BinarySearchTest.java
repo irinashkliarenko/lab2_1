@@ -35,4 +35,13 @@ public class BinarySearchTest {
         assertTrue(searchResult.isFound());
         assertEquals(0, searchResult.getPosition());
     }
+
+    @Test
+    public void moreElements_Last() throws Exception{
+        int element = 11;
+        int [] tab = new int [] {1, 2, 3, 11};
+        SearchResult searchResult = BinarySearch.search(element,tab);
+        assertTrue(searchResult.isFound());
+        assertEquals(tab.length-1, searchResult.getPosition());
+    }
 }
