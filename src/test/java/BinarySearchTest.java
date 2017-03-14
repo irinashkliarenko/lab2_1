@@ -58,4 +58,15 @@ public class BinarySearchTest {
         Assert.assertTrue(result.isFound());
         Assert.assertEquals(EXPECTED_VALUE, result.getPosition());
     }
+
+    @Test
+    public void testValueIsNotInSeq() {
+        int[] seq = {1, 2, 3};
+        int value = 4;
+        final int EXPECTED_VALUE = -1;
+
+        SearchResult result = BinarySearch.search(value, seq);
+        Assert.assertFalse(result.isFound());
+        Assert.assertEquals(EXPECTED_VALUE, result.getPosition());
+    }
 }
