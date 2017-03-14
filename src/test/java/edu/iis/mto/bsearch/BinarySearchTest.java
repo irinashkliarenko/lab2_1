@@ -26,4 +26,13 @@ public class BinarySearchTest {
         assertFalse(searchResult.isFound());
         assertEquals(-1, searchResult.getPosition());
     }
+
+    @Test
+    public void moreElements_First() throws Exception{
+        int element = 11;
+        int [] tab = new int [] {11, 12, 1};
+        SearchResult searchResult = BinarySearch.search(element,tab);
+        assertTrue(searchResult.isFound());
+        assertEquals(0, searchResult.getPosition());
+    }
 }
