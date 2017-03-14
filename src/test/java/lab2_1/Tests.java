@@ -15,4 +15,11 @@ public class Tests {
 		tab[0] = 1;
 		assertTrue(BinarySearch.search(1, tab).isFound());
 	}
+	
+	@Test
+	public void seq1absent() {
+		int[] tab = new int[1];
+		tab[0] = 0;
+		assertFalse(BinarySearch.search(1, tab).isFound());
+	}
 }
