@@ -60,6 +60,15 @@ public class TestV1 {
 		assertFalse(BinarySearch.search(9, array).isFound());
 	}
 	
+	@Test
+	public void elementNotFountGetPosition() {
+		int [] array = new int[7];
+		for(int i = 0; i < 7; i++) {
+			array[i] = i;
+		}
+		assertTrue(BinarySearch.search(9, array).getPosition() == -1);
+	}
+	
 	@Test (expected = IllegalArgumentException.class)
 	public void seq0() {
 		int[] array = new int[0];
