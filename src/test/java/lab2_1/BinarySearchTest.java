@@ -14,9 +14,9 @@ public class BinarySearchTest {
 	
     @Test
     public void checkIfKeyIsInOneSignSeq(){
-	    int seq[] = new int[]{4};
-	    int key = 4;
-	    int position = 1;
+	    final int seq[] = new int[]{4};
+        final int key = 4;
+        final int position = 1;
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -24,9 +24,9 @@ public class BinarySearchTest {
 
 	@Test
 	public void checkIfKeyIsNotInOneSignSeq(){
-		int seq[] = new int[]{4};
-		int key = 1;
-        int position = -1;
+        final int seq[] = new int[]{4};
+        final int key = 1;
+        final int position = -1;
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertThat(searchResult.isFound(), is(false));
         assertThat(searchResult.getPosition(), is(position));
@@ -34,9 +34,9 @@ public class BinarySearchTest {
 
 	@Test
     public void checkIfKeyIsFirstElementOfSeq(){
-	    int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
-	    int key = 2;
-	    int position = 1;
+        final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
+        final int key = 2;
+        final int position = 1;
 	    SearchResult searchResult = BinarySearch.search(key, seq);
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -44,9 +44,9 @@ public class BinarySearchTest {
 
     @Test
     public void checkIfKeyIsLastElementOfSeq(){
-        int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
-        int key = 24;
-        int position = 7;
+        final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
+        final int key = 24;
+        final int position = 7;
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -54,9 +54,9 @@ public class BinarySearchTest {
 
     @Test
     public void checkIfKeyIsMiddleElementOfSeq(){
-        int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
-        int key = 8;
-        int position = 4;
+        final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
+        final int key = 8;
+        final int position = 4;
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -64,9 +64,9 @@ public class BinarySearchTest {
 
     @Test
     public void checkIfKeyIsNotInSeq(){
-        int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
-        int key = 25;
-        int position = -1;
+        final int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
+        final int key = 25;
+        final int position = -1;
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertThat(searchResult.isFound(), is(false));
         assertThat(searchResult.getPosition(), is(position));
