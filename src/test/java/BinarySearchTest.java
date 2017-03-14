@@ -79,4 +79,16 @@ public class BinarySearchTest {
 
         Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
     }
+
+    @Test
+    public void elementIsMiddleInArray() {
+
+        final int KEY = 3;
+        final int[] ARRAY = {1,  KEY, 5};
+        final int EXPECTED_POSITION = 1;
+
+        SearchResult result = BinarySearch.search(KEY, ARRAY);
+
+        Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
+    }
 }
