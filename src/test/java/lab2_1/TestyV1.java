@@ -72,4 +72,15 @@ public class TestyV1 {
 		
 		assertEquals(center+1, result.getPosition());
 	}
+	
+	@Test
+	public void testKeyIsNotFound() {
+		int[] testSeq = {3, 4, 7};
+		int key = 5;
+		
+		assertTrue(testSeq.length > 1);
+		
+		SearchResult result = BinarySearch.search(key, testSeq);
+		assertFalse(result.isFound());
+	}
 }
