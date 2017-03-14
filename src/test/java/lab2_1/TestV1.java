@@ -23,5 +23,14 @@ public class TestV1 {
 		
 		assertFalse(BinarySearch.search(4, array).isFound());
 	}
+	
+	@Test
+	public void multipleSeqIsFirst() {
+		int [] array = new int[10];
+		for(int i = 0; i < 10; i++) {
+			array[i] = i;
+		}
+		assertTrue(BinarySearch.search(0, array).getPosition() == 1);
+	}
 
 }
