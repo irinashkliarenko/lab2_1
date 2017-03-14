@@ -26,5 +26,11 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
 		Assert.assertEquals(false, result.isFound());
 	}
-
+	
+	@org.junit.Test
+	public void testNr3() {
+		int [] arrayUnderTest = new int[]{ FIRST_ELEMENT, 2, 3, 4, MIDDLE_ELEMENT, 6, 7, 8, LAST_ELEMENT };
+		SearchResult result = BinarySearch.search(FIRST_ELEMENT, arrayUnderTest);
+		Assert.assertEquals(true, result.isFound());
+	}
 }
