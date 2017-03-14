@@ -23,8 +23,12 @@ public class SearchTest {
 	@Test
 	public void testIsNotInSequence() {
 		
-		boolean result = true;
-		Assert.assertEquals(true, result);
+		int key = 2;
+		int[] sequence = {1};
+		SearchResult searchResult = BinarySearch.search(key, sequence);
+		
+		boolean result = searchResult.isFound();
+		Assert.assertNotEquals(true, result);
 	}
 	
 	@Test
