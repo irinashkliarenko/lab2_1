@@ -13,14 +13,14 @@ public class Tests {
 	public void seq1present() {
 		int[] tab = new int[1];
 		tab[0] = 1;
-		assertTrue(BinarySearch.search(1, tab).isFound());
+		assertThat(BinarySearch.search(1, tab).isFound(), Matchers.equalTo(true));
 	}
 	
 	@Test
 	public void seq1absent() {
 		int[] tab = new int[1];
 		tab[0] = 0;
-		assertFalse(BinarySearch.search(1, tab).isFound());
+		assertThat(BinarySearch.search(1, tab).isFound(), Matchers.equalTo(false));
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ public class Tests {
 		for(int a = 0; a < 5; a++) {
 			tab[a] = a;
 		}
-		assertTrue(BinarySearch.search(0, tab).getPosition() == 0);
+		assertThat(BinarySearch.search(0, tab).getPosition(), Matchers.equalTo(0));
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class Tests {
 		for(int a = 0; a < 7; a++) {
 			tab[a] = a;
 		}
-		assertTrue(BinarySearch.search(6, tab).getPosition() == tab.length - 1);
+		assertThat(BinarySearch.search(6, tab).getPosition(), Matchers.equalTo(tab.length - 1));
 	}
 	
 	@Test
@@ -47,7 +47,7 @@ public class Tests {
 		for(int a = 0; a < 9; a++) {
 			tab[a] = a;
 		}
-		assertTrue(BinarySearch.search(4, tab).getPosition() == tab.length / 2);
+		assertThat(BinarySearch.search(4, tab).getPosition(), Matchers.equalTo(tab.length / 2));
 	}
 	
 	@Test
@@ -56,7 +56,7 @@ public class Tests {
 		for(int a = 0; a < 4; a++) {
 			tab[a] = a;
 		}
-		assertFalse(BinarySearch.search(10, tab).isFound());
+		assertThat(BinarySearch.search(10, tab).isFound(), Matchers.equalTo(false));
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
@@ -71,6 +71,6 @@ public class Tests {
 		for(int a = 0; a < 4; a++) {
 			tab[a] = a;
 		}
-		assertTrue(BinarySearch.search(10, tab).getPosition() == -1);
+		assertThat(BinarySearch.search(10, tab).getPosition(), Matchers.equalTo(-1));
 	}
 }
