@@ -13,14 +13,20 @@ public class BinarySearchTest {
     public void checkIfKeyIsInOneSignSeq(){
 	    int seq[] = new int[]{4};
 	    int key = 4;
-		Assert.assertTrue(BinarySearch.search(key, seq).isFound());
+	    int position = 1;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals(position, searchResult.getPosition());
     }
 
 	@Test
 	public void checkIfKeyIsNotInOneSignSeq(){
 		int seq[] = new int[]{4};
 		int key = 1;
-		Assert.assertFalse(BinarySearch.search(key, seq).isFound());
+        int position = -1;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(position, searchResult.getPosition());
 	}
 
 	@Test
@@ -57,7 +63,9 @@ public class BinarySearchTest {
     public void checkIfKeyIsNotInSeq(){
         int seq[] = new int[]{2, 4, 6, 8, 10, 12, 24};
         int key = 25;
+        int position = -1;
         SearchResult searchResult = BinarySearch.search(key, seq);
         Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(position, searchResult.getPosition());
     }
 }
