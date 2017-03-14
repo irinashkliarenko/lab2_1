@@ -141,10 +141,10 @@ public class BinarySearchTest {
     @Test
     public void shouldNotFindElementForSeqWithSeveralKeys() throws Exception {
         //given:
-        final int[] ARRAY_WITH_KEY = new int[]{1,2,20,22};
+        final int[] ARRAY_WITHOUT_KEY = new int[]{1,2,20,22};
 
         //when:
-        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITHOUT_KEY);
 
         //then:
         assertThat(sut.isFound(),is(false));
@@ -153,11 +153,11 @@ public class BinarySearchTest {
     @Test
     public void shouldNotReturnPositionOfKey() throws Exception {
         //given:
-        final int[] ARRAY_WITH_KEY = new int[]{1,2,20,22};
+        final int[] ARRAY_WITHOUT_KEY = new int[]{1,2,20,22};
         final int INDEX_NOT_FOUND = -1;
 
         //when:
-        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITHOUT_KEY);
 
         //then:
         assertThat(sut.getPosition(),is(INDEX_NOT_FOUND));
