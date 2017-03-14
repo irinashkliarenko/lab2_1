@@ -21,5 +21,18 @@ public class BinarySearchTest {
 		assertEquals(position, result.getPosition());
 	}
 	
+	@Test
+	public void testCase2() {
+		
+		int key = 4;
+		int[] seq = {3};
+		SearchResult result;
+		int position = -1;
+		
+		result = BinarySearch.search(key, seq);
+		assertTrue(!result.isFound());
+		assertEquals(position, result.getPosition());
+	}
+	
 	
 }
