@@ -87,4 +87,29 @@ public class BinarySearchTest {
         //then:
         assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
     }
+
+    @Test
+    public void shouldFindElementWhichIsLast() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,2,3,4,ANY_KEY};
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.isFound(),is(true));
+    }
+
+    @Test
+    public void shouldReturnProperPositionOfLastElement() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,2,3,4,ANY_KEY};
+        final int EXPECTED_KEY_POSITION = 4;
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
+    }
 }
