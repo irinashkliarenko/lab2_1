@@ -33,4 +33,17 @@ public class Tests {
 		
 		assertTrue(BinarySearch.search(1, seq).getPosition() == 0);
 	}
+	
+	@Test
+	public void sequenceLengthIsLongerThanOneAndElementIsLast() {
+		int[] seq = new int[3];
+		
+		for(int i : seq) {
+			seq[i] = 0;
+		}
+		
+		seq[2] = 122;
+		
+		assertTrue(BinarySearch.search(122, seq).getPosition() == seq.length - 1);
+	}
 }
