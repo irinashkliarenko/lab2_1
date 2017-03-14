@@ -17,5 +17,11 @@ public class BinarySearchTest {
 		SearchResult searchResult = BinarySearch.search(key, seq);
 		Assert.assertTrue(searchResult.isFound());
 	}
-
+	@Test
+	public void testSeqOneElementKeyNotExists() {
+		int key = 4;
+		int seq[] = {1};
+		SearchResult searchResult = BinarySearch.search(key, seq);
+		Assert.assertFalse(searchResult.isFound());
+	}
 }
