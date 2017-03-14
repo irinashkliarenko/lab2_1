@@ -32,5 +32,16 @@ public class TestyV1 {
 		SearchResult result = BinarySearch.search(key, testSeq);
 		assertFalse(result.isFound());
 	}
-
+	
+	@Test
+	public void testKeyIsFirstElement() {
+		
+		int[] testSeq = {3, 4};
+		int key = 3;
+		
+		assertTrue(testSeq.length > 1);
+		
+		SearchResult result = BinarySearch.search(key, testSeq);
+		assertEquals(1, result.getPosition());
+	}
 }
