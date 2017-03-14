@@ -38,7 +38,7 @@ public class TestyV1 {
 	}
 	
 	@Test
-	public void testKeyIsFirstElement() {
+	public void testKeyIsFirstElementInSeqWithManyElements() {
 		
 		int[] testSeq = {3, 4};
 		int key = 3;
