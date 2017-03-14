@@ -12,7 +12,7 @@ import edu.iis.mto.bsearch.SearchResult;
 public class testy_v1 {
 
 	@Test
-	public void keyInTheSequence() {
+	public void testIsKeyInTheSequence() {
 		
 		int key = 2;
 		int[] seq ={2};
@@ -24,7 +24,7 @@ public class testy_v1 {
 	
 	
 	@Test
-	public void keyIsNotInTheSequence() {
+	public void testKeyIsNotInTheSequence() {
 		
 		int key = 2;
 		int[] seq = { 3 }; 
@@ -36,7 +36,7 @@ public class testy_v1 {
 	}
 	
 	@Test
-	public void keyIsFirstInTheSequence() {
+	public void testIsKeyFirstInTheSequence() {
 		
 		int key = 2;
 		int[] seq = { 2 , 3 , 4 , 5 ,  6, 7 };
@@ -48,7 +48,7 @@ public class testy_v1 {
 	}
 	
 	@Test
-	public void keyIsLastInTheSequence() {
+	public void testIsKeyLastInTheSequence() {
 		
 		int key = 7;
 		int[] seq = { 2, 3, 4, 5, 6, 7 } ;
