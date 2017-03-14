@@ -1,0 +1,17 @@
+package edu.iis.mto.bsearch;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * Created by 195035 on 14.03.2017.
+ */
+public class BinarySearchTest {
+
+    @Test
+    public void testSearch_OneElement_Present() {
+
+    }
+
+}
