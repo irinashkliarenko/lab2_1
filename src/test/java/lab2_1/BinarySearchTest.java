@@ -18,9 +18,16 @@ public class BinarySearchTest {
 	}
 	
     @Test
-    public void checkIfKeyisInOneSignSeq(){
+    public void checkIfKeyIsInOneSignSeq(){
 	    seq = new int[]{4};
 	    key = 4;
 		Assert.assertTrue(binarySearch.search(key, seq).isFound());
     }
+
+	@Test
+	public void checkIfKeyIsNotInOneSignSeq(){
+		seq = new int[]{4};
+		key = 1;
+		Assert.assertFalse(binarySearch.search(key, seq).isFound());
+	}
 }
