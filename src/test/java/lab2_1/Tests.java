@@ -46,4 +46,18 @@ public class Tests {
 		
 		assertTrue(BinarySearch.search(122, seq).getPosition() == seq.length - 1);
 	}
+	
+
+	@Test
+	public void sequenceLengthIsLongerThanOneAndElementIsTheMiddleOne() {
+		int[] seq = new int[5];
+		
+		for(int i : seq) {
+			seq[i] = 0;
+		}
+		
+		seq[2] = 2;
+
+		assertTrue(BinarySearch.search(2, seq).getPosition() == seq.length / 2);
+	}
 }
