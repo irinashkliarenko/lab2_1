@@ -60,4 +60,17 @@ public class Tests {
 
 		assertTrue(BinarySearch.search(2, seq).getPosition() == seq.length / 2);
 	}
+	
+	@Test
+	public void sequenceLengthIsLongerThanOneAndElementIsNotFound() {
+		int[] seq = new int[6];
+		
+		for(int i : seq) {
+			seq[i] = 0;
+		}
+
+		seq[1] = 67;
+		
+		assertFalse(BinarySearch.search(67, seq).isFound());
+	}
 }
