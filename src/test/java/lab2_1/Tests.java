@@ -2,6 +2,8 @@ package lab2_1;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -13,7 +15,7 @@ public class Tests {
 		int[] seq = new int[1];
 		seq[0] = 1;
 		
-		assertTrue(BinarySearch.search(1, seq).isFound());
+		Assert.assertThat(BinarySearch.search(1, seq).isFound(), Matchers.equalTo(true));
 	}
 
 	@Test
@@ -21,9 +23,8 @@ public class Tests {
 		int[] seq = new int[1];
 		seq[0] = 52;
 		
-		assertFalse(BinarySearch.search(1, seq).isFound());
+		Assert.assertThat(BinarySearch.search(1, seq).isFound(), Matchers.equalTo(false));
 	}
-	
 
 	@Test
 	public void sequenceLengthIsLongerThanOneAndElementIsFirst() {
@@ -31,9 +32,9 @@ public class Tests {
 		seq[0] = 1;
 		seq[1] = 2;
 		
-		assertTrue(BinarySearch.search(1, seq).getPosition() == 0);
+		Assert.assertThat(BinarySearch.search(1, seq).getPosition(), Matchers.equalTo(0));
 	}
-	
+
 	@Test
 	public void sequenceLengthIsLongerThanOneAndElementIsLast() {
 		int[] seq = new int[3];
@@ -44,9 +45,8 @@ public class Tests {
 		
 		seq[2] = 122;
 		
-		assertTrue(BinarySearch.search(122, seq).getPosition() == seq.length - 1);
+		Assert.assertThat(BinarySearch.search(122, seq).getPosition(), Matchers.equalTo(seq.length - 1));
 	}
-	
 
 	@Test
 	public void sequenceLengthIsLongerThanOneAndElementIsTheMiddleOne() {
@@ -58,7 +58,7 @@ public class Tests {
 		
 		seq[2] = 2;
 
-		assertTrue(BinarySearch.search(2, seq).getPosition() == seq.length / 2);
+		Assert.assertThat(BinarySearch.search(2, seq).getPosition(), Matchers.equalTo(seq.length / 2));
 	}
 	
 	@Test
@@ -71,7 +71,7 @@ public class Tests {
 
 		seq[1] = 67;
 		
-		assertFalse(BinarySearch.search(67, seq).isFound());
+		Assert.assertThat(BinarySearch.search(67, seq).isFound(), Matchers.equalTo(false));
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
@@ -88,6 +88,6 @@ public class Tests {
 			seq[i] = 0;
 		}
 		
-		assertTrue(BinarySearch.search(12, seq).getPosition() == -1);
+		Assert.assertThat(BinarySearch.search(12, seq).getPosition(), Matchers.equalTo(-1));
 	}
 }
