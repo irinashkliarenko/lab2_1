@@ -4,13 +4,20 @@ import org.junit.Assert;
 
 import org.junit.Test;
 
+import edu.iis.mto.bsearch.BinarySearch;
+import edu.iis.mto.bsearch.SearchResult;
+
 public class SearchTest {
 
 	@Test
 	public void testIsInSequence() {
 		
-		boolean result = true;
-		Assert.assertNotEquals(false, result);
+		int key = 2;
+		int[] sequence = {2};
+		SearchResult searchResult = BinarySearch.search(key, sequence);
+		
+		boolean result = searchResult.isFound();
+		Assert.assertEquals(true, result);
 	}
 	
 	@Test
@@ -36,6 +43,13 @@ public class SearchTest {
 	
 	@Test
 	public void testIsMiddleElement() {
+		
+		boolean result = true;
+		Assert.assertNotEquals(false, result);
+	}
+	
+	@Test
+	public void testIsNotInSequenceWhenOverOne() {
 		
 		boolean result = true;
 		Assert.assertNotEquals(false, result);
