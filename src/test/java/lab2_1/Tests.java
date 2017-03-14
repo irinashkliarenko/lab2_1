@@ -73,4 +73,10 @@ public class Tests {
 		
 		assertFalse(BinarySearch.search(67, seq).isFound());
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void sequenceLengthIsZero() {
+		int[] seq = new int[0];
+		BinarySearch.search(2, seq);
+	}
 }
