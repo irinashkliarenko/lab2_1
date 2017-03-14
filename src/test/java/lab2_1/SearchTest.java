@@ -67,8 +67,12 @@ public class SearchTest {
 	@Test
 	public void testIsNotInSequenceWhenOverOne() {
 		
-		boolean result = true;
-		Assert.assertNotEquals(false, result);
+		int key = 7;
+		int[] sequence = {2, 3, 4, 5, 6};
+		SearchResult searchResult = BinarySearch.search(key, sequence);
+		
+		boolean result = searchResult.isFound();
+		Assert.assertNotEquals(true, result);
 	}
 
 }
