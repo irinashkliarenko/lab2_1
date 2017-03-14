@@ -1,7 +1,6 @@
 package lab2_1;
 
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,5 +17,10 @@ public class BinarySearchTest {
 		binarySearch = new BinarySearch();		
 	}
 	
-
+    @Test
+    public void checkIfKeyisInOneSignSeq(){
+	    seq = new int[]{4};
+	    key = 4;
+		Assert.assertTrue(binarySearch.search(key, seq).isFound());
+    }
 }
