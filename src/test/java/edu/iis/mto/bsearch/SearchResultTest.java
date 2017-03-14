@@ -51,5 +51,13 @@ public class SearchResultTest {
         
         Assert.assertEquals(middleElement, BinarySearch.search(key, seq).getPosition());
     }
+    
+    @Test
+    public void manyElementsInSequenceElementNotFound() {
+        int key = 17;
+        int seq[] = {2, 3, 4, 7, 10};
+        
+        Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
+    }
 
 }
