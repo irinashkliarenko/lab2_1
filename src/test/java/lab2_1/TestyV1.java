@@ -50,7 +50,7 @@ public class TestyV1 {
 	}
 	
 	@Test
-	public void testKeyIsLastElement() {
+	public void testKeyIsLastElementInSeqWithManyElements() {
 		
 		int[] testSeq = {3, 4, 7};
 		int key = 7;
@@ -62,7 +62,7 @@ public class TestyV1 {
 	}
 	
 	@Test
-	public void testKeyIsCenterElement() {
+	public void testKeyIsCenterElementInSeqWithManyElements() {
 		
 		int[] testSeq = {3, 4, 7};
 		int key = 4;
