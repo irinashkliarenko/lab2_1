@@ -54,4 +54,13 @@ public class BinarySearchTest {
         assertEquals(2, searchResult.getPosition());
     }
 
+    @Test
+    public void moreElements_NotIn() throws Exception{
+        int element = 11;
+        int [] tab = new int [] {1, 2, 3, 191};
+        SearchResult searchResult = BinarySearch.search(element,tab);
+        assertFalse(searchResult.isFound());
+        assertEquals(-1, searchResult.getPosition());
+    }
+
 }
