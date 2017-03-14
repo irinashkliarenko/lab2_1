@@ -18,27 +18,5 @@ public class BinarySearchTest {
 		binarySearch = new BinarySearch();		
 	}
 	
-	@Test
-	public void searchTest1(){
-		seq = new int[] {1, 2, 3, 4, 5};
-		key = 5;
-		
-		assertTrue(binarySearch.search(key, seq).isFound());
-	}
-	
-	@Test
-	public void searchTest2(){
-		seq = new int[] {1, 2, 3, 4, 5};
-		key = 7;
-		
-		assertFalse(binarySearch.search(key, seq).isFound());
-	}
-	
-	@Test
-	public void searchTest3(){
-		seq = new int[] {1, 2, 2, 4, 5};
-		key = 2;
-		
-		assertTrue(binarySearch.search(key, seq).isFound());
-	}
+
 }
