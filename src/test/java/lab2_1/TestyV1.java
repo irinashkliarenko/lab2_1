@@ -78,7 +78,7 @@ public class TestyV1 {
 	}
 	
 	@Test
-	public void testKeyIsNotFound() {
+	public void testKeyIsNotFoundInSeqWithManyElements() {
 		int[] testSeq = {3, 4, 7};
 		int key = 5;
 		
