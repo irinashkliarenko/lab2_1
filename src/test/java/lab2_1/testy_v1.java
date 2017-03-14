@@ -15,12 +15,24 @@ public class testy_v1 {
 	public void keyInTheSequence() {
 		
 		int key = 2;
-		int[] seq = null;
-		seq[0] = 2;
+		int[] seq ={2};
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
 		assertTrue(result.isFound());
 	}
-
+	
+	
+	@Test
+	public void keyIsNotInTheSequence() {
+		
+		int key = 2;
+		int[] seq = { 3 }; 
+		BinarySearch binarySearch = new BinarySearch();
+		SearchResult result = binarySearch.search(key,seq);
+		
+		assertFalse(result.isFound());
+		
+	}
+	
 }
