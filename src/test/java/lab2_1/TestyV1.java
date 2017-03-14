@@ -20,5 +20,17 @@ public class TestyV1 {
 		SearchResult result = BinarySearch.search(key, testSeq);
 		assertTrue(result.isFound());
 	}
+	
+	@Test
+	public void testKeyIsNotInSequence() {
+		
+		int[] testSeq = {1};
+		int key = 2;
+		
+		assertTrue(testSeq.length == 1);
+		
+		SearchResult result = BinarySearch.search(key, testSeq);
+		assertFalse(result.isFound());
+	}
 
 }
