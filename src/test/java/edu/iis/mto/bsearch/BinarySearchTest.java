@@ -67,4 +67,16 @@ public class BinarySearchTest {
         assertEquals(3, result.getPosition());
 
     }
+
+    @Test
+    public void testSearch_ManyElements_NotPresent() throws Exception {
+        int searched = 69;
+        int[] seq = new int[]{searched + 1, searched + 2, searched + 3, searched + 4};
+
+        SearchResult result = BinarySearch.search(searched, seq);
+
+        assertFalse(result.isFound());
+        assertEquals(-1, result.getPosition());
+
+    }
 }
