@@ -4,7 +4,7 @@ import org.junit.Before;
 
 import edu.iis.mto.bsearch.BinarySearch;
 
-public class SearchResultTest {
+public class BinarySearchTest {
 	
 	private BinarySearch binarySearch;
 
