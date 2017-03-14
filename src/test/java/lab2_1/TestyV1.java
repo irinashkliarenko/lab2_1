@@ -2,6 +2,7 @@ package lab2_1;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -9,9 +10,9 @@ import edu.iis.mto.bsearch.SearchResult;
 
 public class TestyV1 {
 	
-	private int[] seqWithZeroElements;
-	private int[] seqWithOneElement;
-	private int[] seqWithManyElements;
+	private final int[] seqWithZeroElements = {};
+	private final int[] seqWithOneElement = {1};
+	private final int[] seqWithManyElements = {1,3,5};
 	
 	@Test
 	public void testKeyIsInSequence() {
