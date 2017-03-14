@@ -112,4 +112,29 @@ public class BinarySearchTest {
         //then:
         assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
     }
+
+    @Test
+    public void shouldFindElementWhichIsMiddle() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,2,ANY_KEY,20,22};
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.isFound(),is(true));
+    }
+
+    @Test
+    public void shouldReturnProperPositionOfMiddleElement() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{1,2,ANY_KEY,20,22};
+        final int EXPECTED_KEY_POSITION = 2;
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
+    }
 }
