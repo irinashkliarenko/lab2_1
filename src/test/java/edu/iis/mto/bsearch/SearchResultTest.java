@@ -10,7 +10,7 @@ import junit.framework.Assert;
 public class SearchResultTest {
 
     @Test
-    public void OneElementInSequenceIsFound() {
+    public void oneElementInSequenceIsFound() {
         int key = 6;
         int seq[] = {6};
         
@@ -18,7 +18,7 @@ public class SearchResultTest {
     }
     
     @Test
-    public void OneElementInSequenceNotFound() {
+    public void oneElementInSequenceNotFound() {
         int key = 6;
         int seq[] = {7};
         
@@ -26,7 +26,7 @@ public class SearchResultTest {
     }
     
     @Test
-    public void FirstElementsInSequence() {
+    public void firstElementsInSequence() {
         int key = 2;
         int seq[] = {2, 3, 4, 7};
         int fisrtElement = seq.length - (seq.length-1);
@@ -35,12 +35,14 @@ public class SearchResultTest {
     }
     
     @Test
-    public void LastElementsInSequence() {
+    public void lastElementsInSequence() {
         int key = 7;
         int seq[] = {2, 3, 4, 7};
         int lastElement = seq.length;
         
         Assert.assertEquals(lastElement, BinarySearch.search(key, seq).getPosition());
     }
+    
+
 
 }
