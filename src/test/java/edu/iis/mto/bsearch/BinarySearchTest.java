@@ -55,4 +55,16 @@ public class BinarySearchTest {
         assertEquals(seq.length - 1, result.getPosition());
 
     }
+
+    @Test
+    public void testSearch_ManyElements_InTheMiddle() throws Exception {
+        int searched = 69;
+        int[] seq = new int[]{5, 10, 15, searched, 169};
+
+        SearchResult result = BinarySearch.search(searched, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(3, result.getPosition());
+
+    }
 }
