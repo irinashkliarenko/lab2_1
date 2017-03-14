@@ -43,6 +43,13 @@ public class SearchResultTest {
         Assert.assertEquals(lastElement, BinarySearch.search(key, seq).getPosition());
     }
     
-
+    @Test
+    public void middleElementsInSequence() {
+        int key = 4;
+        int seq[] = {2, 3, 4, 7, 10};
+        int middleElement = seq.length/2 + 1;
+        
+        Assert.assertEquals(middleElement, BinarySearch.search(key, seq).getPosition());
+    }
 
 }
