@@ -32,8 +32,8 @@ public class Tests_v1 {
             array[i] = i;
         }
 
-        assertTrue(BinarySearch.search(0, array).isFound());
-        assertTrue(BinarySearch.search(0, array).getPosition() == 0);
+        assertThat(BinarySearch.search(0, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(0, array).getPosition(), Matchers.is(0));
     }
 
     @Test
