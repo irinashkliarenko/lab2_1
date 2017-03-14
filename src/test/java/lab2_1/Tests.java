@@ -23,4 +23,14 @@ public class Tests {
 		
 		assertFalse(BinarySearch.search(1, seq).isFound());
 	}
+	
+
+	@Test
+	public void sequenceLengthIsLongerThanOneAndElementIsFirst() {
+		int[] seq = new int[2];
+		seq[0] = 1;
+		seq[1] = 2;
+		
+		assertTrue(BinarySearch.search(1, seq).getPosition() == 0);
+	}
 }
