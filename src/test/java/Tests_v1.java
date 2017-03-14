@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -11,8 +12,8 @@ public class Tests_v1 {
         int[] array = new int[1];
         array[0] = 3;
 
-        assertTrue(BinarySearch.search(3, array).isFound());
-        assertTrue(BinarySearch.search(3, array).getPosition() == 0);
+        assertThat(BinarySearch.search(3, array).isFound(), Matchers.is(true));
+        assertThat(BinarySearch.search(3, array).getPosition(), Matchers.is(0));
     }
 
     @Test
