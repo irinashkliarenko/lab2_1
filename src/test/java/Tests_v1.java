@@ -65,8 +65,8 @@ public class Tests_v1 {
             array[i] = i;
         }
 
-        assertFalse(BinarySearch.search(15, array).isFound());
-        assertTrue(BinarySearch.search(15, array).getPosition() == -1);
+        assertThat(BinarySearch.search(15, array).isFound(), Matchers.is(false));
+        assertThat(BinarySearch.search(15, array).getPosition(), Matchers.is(-1));
     }
 
 }
