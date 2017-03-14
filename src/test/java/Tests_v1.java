@@ -21,8 +21,8 @@ public class Tests_v1 {
         int[] array = new int[1];
         array[0] = 3;
 
-        assertFalse(BinarySearch.search(15, array).isFound());
-        assertTrue(BinarySearch.search(15, array).getPosition() == -1);
+        assertThat(BinarySearch.search(15, array).isFound(), Matchers.is(false));
+        assertThat(BinarySearch.search(15, array).getPosition(), Matchers.is(-1));
     }
 
     @Test
