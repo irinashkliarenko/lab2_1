@@ -62,4 +62,29 @@ public class BinarySearchTest {
         //then:
         assertThat(sut.getPosition(),is(INDEX_NOT_FOUND));
     }
+
+    @Test
+    public void shouldFindElementWhichIsFirst() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{ANY_KEY,20,22,24};
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.isFound(),is(true));
+    }
+
+    @Test
+    public void shouldReturnProperPositionOfKeyForSeqWithSeveralKeys() throws Exception {
+        //given:
+        final int[] ARRAY_WITH_KEY = new int[]{ANY_KEY,20,22,24};
+        final int EXPECTED_KEY_POSITION = 0;
+
+        //when:
+        SearchResult sut = BinarySearch.search(ANY_KEY,ARRAY_WITH_KEY);
+
+        //then:
+        assertThat(sut.getPosition(),is(EXPECTED_KEY_POSITION));
+    }
 }
