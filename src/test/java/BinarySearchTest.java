@@ -66,6 +66,17 @@ public class BinarySearchTest {
         SearchResult result = BinarySearch.search(KEY, ARRAY);
 
         Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
+    }
 
+    @Test
+    public void elementIsLastInArray() {
+
+        final int KEY = 3;
+        final int[] ARRAY = {1, 2, KEY};
+        final int EXPECTED_POSITION = ARRAY.length-1;
+
+        SearchResult result = BinarySearch.search(KEY, ARRAY);
+
+        Assert.assertEquals(EXPECTED_POSITION, result.getPosition());
     }
 }
