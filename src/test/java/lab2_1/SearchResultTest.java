@@ -2,14 +2,14 @@ package lab2_1;
 
 import org.junit.Before;
 
-import edu.iis.mto.bsearch.SearchResult;
+import edu.iis.mto.bsearch.BinarySearch;
 
 public class SearchResultTest {
 	
-	private SearchResult searchResult;
+	private BinarySearch binarySearch;
 
 	@Before
 	public void setup(){
-		searchResult = new SearchResult();
+		binarySearch = new BinarySearch();
 	}
 }
