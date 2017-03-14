@@ -7,6 +7,13 @@ import edu.iis.mto.bsearch.BinarySearch;
 
 public class Tests_v1 {
 
+    @Test (expected = IllegalArgumentException.class)
+    public void emptySequence() {
+        int[] array = new int[0];
+
+        BinarySearch.search(3, array);
+    }
+
     @Test
     public void singleElementIsPresent() {
         int[] array = new int[1];
