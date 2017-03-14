@@ -16,4 +16,11 @@ public class Tests {
 		assertTrue(BinarySearch.search(1, seq).isFound());
 	}
 
+	@Test
+	public void sequenceLengthIsOneAndElementIsNotInTheSequence() {
+		int[] seq = new int[1];
+		seq[0] = 52;
+		
+		assertFalse(BinarySearch.search(1, seq).isFound());
+	}
 }
