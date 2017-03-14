@@ -2,6 +2,7 @@ package lab2_1;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -13,7 +14,7 @@ public class TestV1 {
 		int [] array = new int[1];
 		array[0] = 3;
 		
-		assertTrue(BinarySearch.search(3, array).isFound());
+		assertThat(BinarySearch.search(3, array).isFound(), Matchers.equalTo(true));
 	}
 	
 	@Test
@@ -21,7 +22,7 @@ public class TestV1 {
 		int [] array = new int[1];
 		array[0] = 5;
 		
-		assertFalse(BinarySearch.search(4, array).isFound());
+		assertThat(BinarySearch.search(4, array).isFound(), Matchers.equalTo(false));
 	}
 	
 	@Test
@@ -30,7 +31,7 @@ public class TestV1 {
 		for(int i = 0; i < 10; i++) {
 			array[i] = i+10;
 		}
-		assertTrue(BinarySearch.search(10, array).getPosition() == 0);
+		assertThat(BinarySearch.search(10, array).getPosition(), Matchers.equalTo(0));
 	}
 	
 	@Test
@@ -39,7 +40,7 @@ public class TestV1 {
 		for(int i = 0; i < 13; i++) {
 			array[i] = i;
 		}
-		assertTrue(BinarySearch.search(array.length-1, array).getPosition() == array.length-1);
+		assertThat(BinarySearch.search(array.length-1, array).getPosition(), Matchers.equalTo(array.length-1));
 	}
 	
 	@Test
@@ -48,7 +49,7 @@ public class TestV1 {
 		for(int i = 0; i < 9; i++) {
 			array[i] = i;
 		}
-		assertTrue(BinarySearch.search(4, array).getPosition() == (array.length/2));
+		assertThat(BinarySearch.search(4, array).getPosition(), Matchers.equalTo(array.length/2));
 	}
 	
 	@Test
@@ -57,16 +58,16 @@ public class TestV1 {
 		for(int i = 0; i < 6; i++) {
 			array[i] = i;
 		}
-		assertFalse(BinarySearch.search(9, array).isFound());
+		assertThat(BinarySearch.search(9, array).isFound(), Matchers.equalTo(false));
 	}
 	
 	@Test
-	public void elementNotFountGetPosition() {
+	public void elementNotFoundGetPosition() {
 		int [] array = new int[7];
 		for(int i = 0; i < 7; i++) {
 			array[i] = i;
 		}
-		assertTrue(BinarySearch.search(9, array).getPosition() == -1);
+		assertThat(BinarySearch.search(9, array).getPosition(), Matchers.equalTo(-1));
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
