@@ -32,4 +32,12 @@ public class BinarySearchTest {
 		Assert.assertTrue(searchResult.isFound());
 		Assert.assertEquals(searchResult.getPosition(), 1);
 	}
+	@Test
+	public void testSeqMoreElementsKeyLast() {
+		int key = 4;
+		int seq[] = {2,1,4};
+		SearchResult searchResult = BinarySearch.search(key, seq);
+		Assert.assertTrue(searchResult.isFound());
+		Assert.assertEquals(searchResult.getPosition(), seq.length);
+	}
 }
