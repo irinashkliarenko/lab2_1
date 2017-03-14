@@ -40,4 +40,13 @@ public class Tests {
 		}
 		assertTrue(BinarySearch.search(6, tab).getPosition() == tab.length - 1);
 	}
+	
+	@Test
+	public void seqMore1middle() {
+		int[] tab = new int[9];
+		for(int a = 0; a < 9; a++) {
+			tab[a] = a;
+		}
+		assertTrue(BinarySearch.search(4, tab).getPosition() == tab.length / 2);
+	}
 }
