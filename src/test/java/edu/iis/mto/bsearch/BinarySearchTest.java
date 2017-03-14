@@ -11,7 +11,13 @@ public class BinarySearchTest {
 
     @Test
     public void testSearch_OneElement_Present() {
+        int searched = 69;
+        int[] seq = new int[]{searched};
 
+        SearchResult result = BinarySearch.search(searched, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(0, result.getPosition());
     }
 
 }
