@@ -32,5 +32,14 @@ public class TestV1 {
 		}
 		assertTrue(BinarySearch.search(0, array).getPosition() == 1);
 	}
+	
+	@Test
+	public void multipleSeqIsLast() {
+		int [] array = new int[10];
+		for(int i = 0; i < 10; i++) {
+			array[i] = i;
+		}
+		assertTrue(BinarySearch.search(9, array).getPosition() == array.length);
+	}
 
 }
