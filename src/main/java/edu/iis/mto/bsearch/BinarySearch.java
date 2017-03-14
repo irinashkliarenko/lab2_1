@@ -21,25 +21,29 @@ public class BinarySearch {
 	 *         znaleziony -1)
 	 */
 	public static SearchResult search(int key, int[] seq) {
-		int start = 0;
-		int end = seq.length - 1;
-		int center;
-		SearchResult result = new SearchResult();
-
-		while (start <= end) {
-			center = (start + end) / 2;
-			if (seq[center] == key) {
-				result.setPosition(center);
-				break;
-			} else {
-				if (seq[center] < key)
-					start = center + 1;
-				else
-					end = center - 1;
-			}
-
+		if (seq.length == 0) {
+			throw new IllegalArgumentException();
 		}
-		return result;
+		else {
+			int start = 0;
+			int end = seq.length - 1;
+			int center;
+			SearchResult result = new SearchResult();
+	
+			while (start <= end) {
+				center = (start + end) / 2;
+				if (seq[center] == key) {
+					result.setPosition(center);
+					break;
+				} else {
+					if (seq[center] < key)
+						start = center + 1;
+					else
+						end = center - 1;
+				}
+	
+			}
+			return result;
+		}
 	}
-
 }
