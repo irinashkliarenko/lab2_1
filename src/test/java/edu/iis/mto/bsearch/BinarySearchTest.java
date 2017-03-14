@@ -25,7 +25,7 @@ public class BinarySearchTest {
         int searched = 69;
         int[] seq = new int[]{searched};
 
-        SearchResult result = BinarySearch.search(searched, seq);
+        SearchResult result = BinarySearch.search(searched - 1, seq);
 
         assertFalse(result.isFound());
         assertEquals(-1, result.getPosition());
