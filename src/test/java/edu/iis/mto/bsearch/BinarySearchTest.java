@@ -88,8 +88,30 @@ public class BinarySearchTest {
     @Test
     public void checkBoundaryCaseForBinarySearchBeforeMiddle() {
         int[] seq = new int[] {1, 2, 4, 6, 9, 13};
-        int key = (seq.length/2)-1;
+        int key = 2;
         int position = 1;
+        SearchResult searchResult=BinarySearch.search(key, seq);
+
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(position));
+    }
+
+    @Test
+    public void checkBoundaryCaseForBinarySearchAfterMiddle() {
+        int[] seq = new int[] {1, 2, 4, 6, 9, 13};
+        int key = 6;
+        int position = 3;
+        SearchResult searchResult=BinarySearch.search(key, seq);
+
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(position));
+    }
+
+    @Test
+    public void checkBoundaryCaseForBinarySearchMiddle() {
+        int[] seq = new int[] {1, 2, 4, 6, 9, 13};
+        int key = 4;
+        int position = 2;
         SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertThat(searchResult.isFound(), is(true));
