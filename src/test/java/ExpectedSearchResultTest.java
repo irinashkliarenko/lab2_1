@@ -1,6 +1,7 @@
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -66,6 +67,16 @@ public class ExpectedSearchResultTest {
         SearchResult result = BinarySearch.search(key,seq);
 
     }
+
+    @Test public void searchForNonExistingKey_multipleElemOddSequence(){
+        int key = 9;
+        int[] seq = {2,4,8,16,32,64,128};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertThat(result.isFound(),is(equalTo(false)));
+        Assert.assertThat(result.getPosition(),is(equalTo(-1)));
+    }
+
+    
 
 
 
