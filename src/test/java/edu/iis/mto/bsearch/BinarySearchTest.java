@@ -11,21 +11,24 @@ import static org.junit.Assert.*;
 public class BinarySearchTest {
 
     private BinarySearch binarySearch;
+    private SearchResult searchResult;
     private int key;
     private int[] seq;
 
     @Before
     public void setUp() throws Exception {
         binarySearch = new BinarySearch();
+        searchResult = new SearchResult();
     }
 
     @Test
-    public void isInputSeqFound() {
+    public void isInputKeyFoundInOneRecordSeq() {
         key = 4;
-        seq = new int[] {1, 2, 4, 6};
+        seq = new int[] {1, 2, 4, 6, 9};
 
         assertTrue(BinarySearch.search(key, seq).isFound());
         assertEquals(2,BinarySearch.search(key, seq).getPosition());
         assertEquals(key,seq[2]);
     }
+
 }
