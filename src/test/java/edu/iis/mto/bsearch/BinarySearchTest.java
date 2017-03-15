@@ -77,8 +77,11 @@ public class BinarySearchTest {
         assertThat(searchResult.getPosition(), is(position));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void seqIsEmptyThrowException() {
+        int key = 12;
+        int[] seq = new int[0];
 
+        BinarySearch.search(key,seq);
     }
 }
