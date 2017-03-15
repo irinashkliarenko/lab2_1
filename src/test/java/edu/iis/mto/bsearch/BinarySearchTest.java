@@ -76,4 +76,9 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is(false));
         assertThat(searchResult.getPosition(), is(position));
     }
+
+    @Test
+    public void seqIsEmptyThrowException() {
+
+    }
 }
