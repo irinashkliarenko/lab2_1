@@ -2,7 +2,6 @@
  * 
  */
 package edu.iis.mto.bsearch;
-
 /**
  * Utility Class dla wyszukiwania binarnego
  * 
