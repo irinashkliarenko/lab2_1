@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.*;
 public class BinarySearchTest {
 
 	@Test
-	public void testBinarySearchCase1() {
+	public void testBinarySearchCase1() throws Exception{
 		//dlugosc sekwencji wejsciowej: 1
 		//element wyszukiwany: jest w sekwencji
 		int key = 5;
@@ -23,7 +23,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testBinarySearchCase2() {
+	public void testBinarySearchCase2() throws Exception{
 		//dlugosc sekwencji wejsciowej: 1
 		//element wyszukiwany: nie ma w sekwencji
 		int key = 5;
@@ -35,7 +35,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testBinarySearchCase3() {
+	public void testBinarySearchCase3() throws Exception{
 		//dlugosc sekwencji wejsciowej: >1
 		//element wyszukiwany: jest pierwszy w sekwencji
 		int key = 5;
@@ -47,7 +47,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testBinarySearchCase4() {
+	public void testBinarySearchCase4() throws Exception{
 		//dlugosc sekwencji wejsciowej: >1
 		//element wyszukiwany: jest ostatnim elementem
 		int[] seq = {5, 8, 13, 24, 25};
@@ -59,7 +59,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testBinarySearchCase5() {
+	public void testBinarySearchCase5() throws Exception{
 		//dlugosc sekwencji wejsciowej: >1
 		//element wyszukiwany: jest srodkowym elementem
 		int[] seq = {5, 8, 13, 24, 25};
@@ -71,7 +71,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testBinarySearchCase6() {
+	public void testBinarySearchCase6() throws Exception{
 		//dlugosc sekwencji wejsciowej: >1
 		//element wyszukiwany: nie ma w sekwencji
 		int[] seq = {5, 8, 13, 24, 25};
