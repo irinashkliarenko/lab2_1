@@ -56,6 +56,14 @@ public class ExpectedSearchResultTest {
         Assert.assertTrue(result.getPosition()==-1);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void exceptionTest_emptySequence() {
+        int key = 1;
+        int[] seq = {};
+        SearchResult result = BinarySearch.search(key,seq);
+
+    }
+
 
 
 
