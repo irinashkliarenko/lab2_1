@@ -74,6 +74,30 @@ public class BinarySearchTest {
 	}
 	
 	@Test
+	public void isSearchingElementOnAboveMiddlePositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
+		SearchResult result;
+		int[] seq = {3, 5, 8, 10, 15};
+		int key = 5;
+		int position = 2;
+		
+		result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), is (true));
+		assertThat(result.getPosition() , is (position));
+	}
+	
+	@Test
+	public void isSearchingElementOnBelowMiddlePositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
+		SearchResult result;
+		int[] seq = {3, 5, 8, 10, 15};
+		int key = 10;
+		int position = 4;
+	
+		result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), is (true));
+		assertThat(result.getPosition() , is (position));
+	}
+	
+	@Test
 	public void isSearchingElementAbsentInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
 		SearchResult result;
 		int[] seq = {3, 5};
@@ -96,4 +120,5 @@ public class BinarySearchTest {
 		assertThat(result.isFound(), is (false));
 		assertThat(result.getPosition() , is (position));
 	}
+	
 }
