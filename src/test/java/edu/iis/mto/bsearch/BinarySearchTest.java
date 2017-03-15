@@ -11,24 +11,12 @@ import static org.junit.Assert.*;
  */
 public class BinarySearchTest {
 
-    private BinarySearch binarySearch;
-    private SearchResult searchResult;
-    private int key;
-    private int[] seq;
-    private int position;
-
-    @Before
-    public void setUp() throws Exception {
-        binarySearch = new BinarySearch();
-        searchResult = new SearchResult();
-    }
-
     @Test
     public void isInputKeyFoundInOneRecordSeq() {
-        key = 1;
-        seq = new int[] {1};
-        position = 0;
-        searchResult=BinarySearch.search(key, seq);
+        int key = 1;
+        int[] seq = new int[] {1};
+        int position = 0;
+        SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -36,10 +24,10 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyNotFoundInOneRecordSeq() {
-        key = 2;
-        seq = new int[] {1};
-        position = -1;
-        searchResult=BinarySearch.search(key, seq);
+        int key = 2;
+        int[] seq = new int[] {1};
+        int position = -1;
+        SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertThat(searchResult.isFound(), is(false));
         assertThat(searchResult.getPosition(), is(position));
@@ -47,10 +35,10 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyFirstRecordSeq() {
-        key = 2;
-        seq = new int[] {1, 2, 4, 6, 9};
-        position = 1;
-        searchResult=BinarySearch.search(key, seq);
+        int key = 2;
+        int[] seq = new int[] {1, 2, 4, 6, 9};
+        int position = 1;
+        SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
         assertThat(searchResult.getPosition(), is(position));
@@ -58,10 +46,10 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyLastRecordSeq() {
-        key = 9;
-        seq = new int[] {1, 2, 4, 6, 9};
-        position = 4;
-        searchResult=BinarySearch.search(key, seq);
+        int key = 9;
+        int[] seq = new int[] {1, 2, 4, 6, 9};
+        int position = 4;
+        SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -69,10 +57,10 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyMiddleRecordSeq() {
-        key = 4;
-        seq = new int[] {1, 2, 4, 6, 9};
-        position = 2;
-        searchResult=BinarySearch.search(key, seq);
+        int key = 4;
+        int[] seq = new int[] {1, 2, 4, 6, 9};
+        int position = 2;
+        SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is(position));
@@ -80,10 +68,10 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyNotFoundInRecordsOfSeq() {
-        key = 12;
-        seq = new int[] {1, 2, 4, 6, 9};
-        position = -1;
-        searchResult=BinarySearch.search(key, seq);
+        int key = 12;
+        int[] seq = new int[] {1, 2, 4, 6, 9};
+        int position = -1;
+        SearchResult searchResult=BinarySearch.search(key, seq);
 
         assertThat(searchResult.isFound(), is(false));
         assertThat(searchResult.getPosition(), is(position));
