@@ -32,8 +32,11 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyNotFoundInOneRecordSeq() {
-        key = 1;
-        seq = new int[] {1, 2, 4, 6, 9};
+        key = 2;
+        seq = new int[] {1};
+        searchResult=BinarySearch.search(key, seq);
+        assertFalse(searchResult.isFound());
+        assertNotEquals(key,seq[0]);
     }
 
 }
