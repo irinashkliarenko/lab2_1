@@ -23,12 +23,17 @@ public class BinarySearchTest {
 
     @Test
     public void isInputKeyFoundInOneRecordSeq() {
-        key = 4;
-        seq = new int[] {1, 2, 4, 6, 9};
+        key = 1;
+        seq = new int[] {1};
+        searchResult=BinarySearch.search(key, seq);
+        assertTrue(searchResult.isFound());
+        assertEquals(key,seq[0]);
+    }
 
-        assertTrue(BinarySearch.search(key, seq).isFound());
-        assertEquals(2,BinarySearch.search(key, seq).getPosition());
-        assertEquals(key,seq[2]);
+    @Test
+    public void isInputKeyNotFoundInOneRecordSeq() {
+        key = 1;
+        seq = new int[] {1, 2, 4, 6, 9};
     }
 
 }
