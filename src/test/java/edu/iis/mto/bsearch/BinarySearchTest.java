@@ -45,7 +45,7 @@ public class BinarySearchTest {
 		*/
 		
 		int key = 3;
-		int[] seq = {3, 5, 8, 10};
+		int[] seq = {3, 5, 8, 10, 15, 17, 27};
 		SearchResult result;
 		int position = 1;	
 		
@@ -94,7 +94,7 @@ public class BinarySearchTest {
 		nie ma w sekwencji, przy sekwencji wejœciowej >1
 		*/
 		SearchResult result;
-		int[] seq = {3, 5, 8, 10, 15};
+		int[] seq = {3, 5};
 		int key = 2;
 		
 		result = BinarySearch.search(key, seq);
