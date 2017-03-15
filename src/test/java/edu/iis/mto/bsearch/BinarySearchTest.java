@@ -63,4 +63,16 @@ public class BinarySearchTest {
         assertEquals(position,searchResult.getPosition());
 
     }
+
+    @Test
+    public void isInputKeyMiddleRecordSeq() {
+        key = 4;
+        seq = new int[] {1, 2, 4, 6, 9};
+        position = 3;
+        searchResult=BinarySearch.search(key, seq);
+        assertTrue(searchResult.isFound());
+        assertEquals(key,seq[2]);
+        assertEquals(position,searchResult.getPosition());
+
+    }
 }
