@@ -15,4 +15,12 @@ public class ExpectedSearchResultTest {
         Assert.assertTrue(result.isFound());
         Assert.assertTrue(result.getPosition()==1);
     }
+
+    @Test public void testKeyIsNotInSequence (){
+        int key = 5;
+        int[] seq = {1};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertTrue(!result.isFound());
+        Assert.assertTrue(result.getPosition()==-1);
+    }
 }
