@@ -81,5 +81,4 @@ public class BinarySearchTest {
 		assertThat(result.isFound(), is(not(true)));
 		assertThat(position, is(equalTo(result.getPosition())));
 	}
-
 }
