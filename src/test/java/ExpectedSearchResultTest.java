@@ -76,7 +76,13 @@ public class ExpectedSearchResultTest {
         Assert.assertThat(result.getPosition(),is(equalTo(-1)));
     }
 
-    
+    @Test public void searchForNonExistingKey_multipleElemEvenSequence(){
+        int key = 9;
+        int[] seq = {2,4,8,16,32,64};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertThat(result.isFound(),is(equalTo(false)));
+        Assert.assertThat(result.getPosition(),is(equalTo(-1)));
+    }
 
 
 
