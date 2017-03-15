@@ -84,4 +84,14 @@ public class BinarySearchTest {
 
         BinarySearch.search(key,seq);
     }
+
+    @Test
+    public void checkBoundaryCaseForBinarySearch() {
+        int[] seq = new int[] {1, 2, 4, 6, 9, 13};
+        int key = (seq.length/2)-1;
+        SearchResult searchResult=BinarySearch.search(key, seq);
+
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(key));
+    }
 }
