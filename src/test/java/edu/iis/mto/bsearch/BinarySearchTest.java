@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
+
 
 public class BinarySearchTest {
 
@@ -45,7 +45,7 @@ public class BinarySearchTest {
 		*/
 		
 		int key = 3;
-		int[] seq = {3, 10, 5, 8};
+		int[] seq = {3, 5, 8, 10};
 		SearchResult result;
 		int position = 1;	
 		
@@ -59,11 +59,10 @@ public class BinarySearchTest {
 		/*sprawdzenie czy element wyszukiwany 
 		jest ostatnim elementem przy sekwencji wejœciowej >1
 		*/
-		
-		int key = 3;
-		int[] seq = {8, 10, 5, 3};
-		SearchResult result = ;
-		int position = [seq.length];
+		SearchResult result;
+		int[] seq = {3, 5, 8, 10};
+		int key = 10;
+		int position = seq.length;
 		
 		result = BinarySearch.search(key, seq);
 		assertTrue(result.isFound());
