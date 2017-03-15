@@ -82,4 +82,16 @@ public class BinarySearchTest {
 		assertTrue(!result.isFound());
 		assertEquals(-1, result.getPosition());
 	}
+	
+	@Test
+	public void isSearchingElementInInputSequenceWhenInputSequenceLengthEquals0() {
+		SearchResult result;
+		int[] seq = {};
+		int key = 2;
+		
+		result = BinarySearch.search(key, seq);
+		assertTrue(!result.isFound());
+		assertEquals(-1, result.getPosition());
+	}
+	
 }
