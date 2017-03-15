@@ -87,4 +87,18 @@ public class BinarySearchTest {
 		assertTrue(result.isFound());
 		assertEquals(position, result.getPosition());
 	}
+	
+	@Test
+	public void testCase6() {
+		/*sprawdzenie czy elementu wyszukiwanego 
+		nie ma w sekwencji, przy sekwencji wejœciowej >1
+		*/
+		SearchResult result;
+		int[] seq = {3, 5, 8, 10, 15};
+		int key = 2;
+		
+		result = BinarySearch.search(key, seq);
+		assertTrue(!result.isFound());
+		assertEquals(-1, result.getPosition());
+	}
 }
