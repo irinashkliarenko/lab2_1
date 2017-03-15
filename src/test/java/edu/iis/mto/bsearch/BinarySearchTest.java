@@ -26,20 +26,22 @@ public class BinarySearchTest {
     public void isInputKeyFoundInOneRecordSeq() {
         key = 1;
         seq = new int[] {1};
+        position = 0;
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
-        assertEquals(key,seq[0]);
+        assertEquals(position,searchResult.getPosition());
     }
 
     @Test
     public void isInputKeyNotFoundInOneRecordSeq() {
         key = 2;
         seq = new int[] {1};
+        position = -1;
         searchResult=BinarySearch.search(key, seq);
 
         assertFalse(searchResult.isFound());
-        assertNotEquals(key,seq[0]);
+        assertEquals(position,searchResult.getPosition());
     }
 
     @Test
@@ -50,7 +52,6 @@ public class BinarySearchTest {
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
-        assertEquals(key,seq[1]);
         assertEquals(position,searchResult.getPosition());
     }
 
@@ -62,7 +63,6 @@ public class BinarySearchTest {
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
-        assertEquals(key,seq[4]);
         assertEquals(position,searchResult.getPosition());
     }
 
@@ -74,7 +74,6 @@ public class BinarySearchTest {
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
-        assertEquals(key,seq[2]);
         assertEquals(position,searchResult.getPosition());
     }
 
@@ -82,11 +81,10 @@ public class BinarySearchTest {
     public void isInputKeyNotFoundInRecordsOfSeq() {
         key = 12;
         seq = new int[] {1, 2, 4, 6, 9};
-        position = 3;
+        position = -1;
         searchResult=BinarySearch.search(key, seq);
 
         assertFalse(searchResult.isFound());
-        assertNotEquals(key,seq[2]);
-        assertNotEquals(position,searchResult.getPosition());
+        assertEquals(position,searchResult.getPosition());
     }
 }
