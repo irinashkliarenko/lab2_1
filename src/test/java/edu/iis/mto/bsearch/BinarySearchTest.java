@@ -69,4 +69,22 @@ public class BinarySearchTest {
 		assertEquals(position, result.getPosition());
 	}
 	
+	@Test
+	public void testCase5() {
+		/*sprawdzenie czy element wyszukiwany 
+		jest œrodkowym elementem przy sekwencji wejœciowej >1
+		*/
+		SearchResult result;
+		int[] seq = {3, 5, 8, 10, 15};
+		int key = 8;
+		int position = seq.length/2;
+		
+		if(seq.length % 2 == 1) {
+			position = seq.length/2 + 1;
+		}
+		
+		result = BinarySearch.search(key, seq);
+		assertTrue(result.isFound());
+		assertEquals(position, result.getPosition());
+	}
 }
