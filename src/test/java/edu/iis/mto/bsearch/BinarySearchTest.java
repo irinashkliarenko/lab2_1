@@ -10,7 +10,7 @@ import org.junit.Test;
 public class BinarySearchTest {
 
 	@Test
-	public void isSearchingElementInInputSequenceWhenInputSequenceLengthEquals1() {
+	public void isSearchingElementInInputSequenceWhenInputSequenceLengthEquals1() throws Exception{
 		int key = 3;
 		int[] seq = {key};
 		SearchResult result;
@@ -22,7 +22,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void isSearchingElementAbsentInInputSequenceWhenInputSequnceLengthEquals1() {
+	public void isSearchingElementAbsentInInputSequenceWhenInputSequnceLengthEquals1() throws Exception{
 		int key = 4;
 		int[] seq = {3};
 		SearchResult result;
@@ -34,7 +34,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void isSearchingElementOnFirstPositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
+	public void isSearchingElementOnFirstPositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
 		int key = 3;
 		int[] seq = {3, 5, 8, 10, 15, 17, 27};
 		SearchResult result;
@@ -46,7 +46,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void isSearchingElementOnLastPositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
+	public void isSearchingElementOnLastPositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
 		SearchResult result;
 		int[] seq = {3, 5, 8, 10};
 		int key = 10;
@@ -58,7 +58,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void isSearchingElementOnMiddlePositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
+	public void isSearchingElementOnMiddlePositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
 		SearchResult result;
 		int[] seq = {3, 5, 8, 10, 15};
 		int key = 8;
@@ -74,7 +74,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void isSearchingElementAbsentInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
+	public void isSearchingElementAbsentInInputSequenceWhenInputSequenceLengthIsBiggerThan1() throws Exception{
 		SearchResult result;
 		int[] seq = {3, 5};
 		int key = 2;
@@ -86,7 +86,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void isSearchingElementInInputSequenceWhenInputSequenceLengthEquals0() {
+	public void isSearchingElementInInputSequenceWhenInputSequenceLengthEquals0() throws Exception{
 		SearchResult result;
 		int[] seq = {};
 		int key = 2;
@@ -96,5 +96,4 @@ public class BinarySearchTest {
 		assertThat(result.isFound(), is (false));
 		assertThat(result.getPosition() , is (position));
 	}
-	
 }
