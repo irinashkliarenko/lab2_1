@@ -3,7 +3,6 @@ package edu.iis.mto.bsearch.tests;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
-
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 import static org.hamcrest.CoreMatchers.*;
