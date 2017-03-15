@@ -67,7 +67,7 @@ public class BinarySearchTest {
 		if(seq.length % 2 == 1) {
 			position = seq.length/2 + 1;
 		}
-		
+	
 		result = BinarySearch.search(key, seq);
 		assertThat(result.isFound(), is (true));
 		assertThat(result.getPosition() , is (position));
