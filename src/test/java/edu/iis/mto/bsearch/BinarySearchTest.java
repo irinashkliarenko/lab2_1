@@ -3,6 +3,7 @@ package edu.iis.mto.bsearch;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
@@ -29,8 +30,8 @@ public class BinarySearchTest {
         position = 0;
         searchResult=BinarySearch.search(key, seq);
 
-        assertTrue(searchResult.isFound());
-        assertEquals(position,searchResult.getPosition());
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
@@ -40,8 +41,8 @@ public class BinarySearchTest {
         position = -1;
         searchResult=BinarySearch.search(key, seq);
 
-        assertFalse(searchResult.isFound());
-        assertEquals(position,searchResult.getPosition());
+        assertThat(searchResult.isFound(), is(false));
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
@@ -52,7 +53,7 @@ public class BinarySearchTest {
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
-        assertEquals(position,searchResult.getPosition());
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
@@ -62,8 +63,8 @@ public class BinarySearchTest {
         position = 4;
         searchResult=BinarySearch.search(key, seq);
 
-        assertTrue(searchResult.isFound());
-        assertEquals(position,searchResult.getPosition());
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
@@ -73,8 +74,8 @@ public class BinarySearchTest {
         position = 2;
         searchResult=BinarySearch.search(key, seq);
 
-        assertTrue(searchResult.isFound());
-        assertEquals(position,searchResult.getPosition());
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
@@ -84,7 +85,7 @@ public class BinarySearchTest {
         position = -1;
         searchResult=BinarySearch.search(key, seq);
 
-        assertFalse(searchResult.isFound());
-        assertEquals(position,searchResult.getPosition());
+        assertThat(searchResult.isFound(), is(false));
+        assertThat(searchResult.getPosition(), is(position));
     }
 }
