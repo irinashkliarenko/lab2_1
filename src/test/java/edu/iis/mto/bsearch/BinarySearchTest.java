@@ -14,6 +14,7 @@ public class BinarySearchTest {
     private SearchResult searchResult;
     private int key;
     private int[] seq;
+    private int position;
 
     @Before
     public void setUp() throws Exception {
@@ -37,6 +38,18 @@ public class BinarySearchTest {
         searchResult=BinarySearch.search(key, seq);
         assertFalse(searchResult.isFound());
         assertNotEquals(key,seq[0]);
+    }
+
+    @Test
+    public void isInputKeyFirstRecordSeq() {
+        key = 2;
+        seq = new int[] {1, 2, 4, 6, 9};
+        position = 2;
+        searchResult=BinarySearch.search(key, seq);
+        assertTrue(searchResult.isFound());
+        assertEquals(key,seq[1]);
+        assertEquals(position,searchResult.getPosition());
+        
     }
 
 }
