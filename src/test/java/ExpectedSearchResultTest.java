@@ -48,5 +48,15 @@ public class ExpectedSearchResultTest {
         Assert.assertTrue(result.getPosition()==2);
     }
 
+    @Test public void testKeyIsNotInSequenceBiggerThanOne (){
+        int key = 7;
+        int[] seq = {1,3,5};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertTrue(!result.isFound());
+        Assert.assertTrue(result.getPosition()==-1);
+    }
+
+
+
 
 }
