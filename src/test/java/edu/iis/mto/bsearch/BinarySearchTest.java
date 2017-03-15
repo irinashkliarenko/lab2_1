@@ -27,7 +27,7 @@ public class BinarySearchTest {
         key = 1;
         seq = new int[] {1};
         searchResult=BinarySearch.search(key, seq);
-        
+
         assertTrue(searchResult.isFound());
         assertEquals(key,seq[0]);
     }
@@ -46,7 +46,7 @@ public class BinarySearchTest {
     public void isInputKeyFirstRecordSeq() {
         key = 2;
         seq = new int[] {1, 2, 4, 6, 9};
-        position = 2;
+        position = 1;
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
@@ -58,7 +58,7 @@ public class BinarySearchTest {
     public void isInputKeyLastRecordSeq() {
         key = 9;
         seq = new int[] {1, 2, 4, 6, 9};
-        position = 5;
+        position = 4;
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
@@ -70,7 +70,7 @@ public class BinarySearchTest {
     public void isInputKeyMiddleRecordSeq() {
         key = 4;
         seq = new int[] {1, 2, 4, 6, 9};
-        position = 3;
+        position = 2;
         searchResult=BinarySearch.search(key, seq);
 
         assertTrue(searchResult.isFound());
