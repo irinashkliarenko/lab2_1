@@ -81,4 +81,28 @@ public class BinarySearchTest {
 		assertThat(result.isFound(), is(not(true)));
 		assertThat(position, is(equalTo(result.getPosition())));
 	}
+	
+	@Test
+	public void testBinarySearchWithRepeatingValues1() throws Exception {
+		//dlugosc sekwencji wejsciowej: >1
+		//element wyszukiwany: nie ma w sekwencji
+		int[] seq = {5, 8, 13, 13, 24, 25};
+		int key = 23;
+		int position = -1;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), is(not(true)));
+		assertThat(position, is(equalTo(result.getPosition())));
+	}
+	
+	@Test
+	public void testBinarySearchWithRepeatingValues2() throws Exception {
+		//dlugosc sekwencji wejsciowej: >1
+		//element wyszukiwany: jest w sekwencji
+		int[] seq = {5, 8, 13, 13, 13, 13, 13, 24, 25};
+		int key = 13;
+		int position = 5;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), is(true));
+		assertThat(position, is(equalTo(result.getPosition())));
+	}
 }
