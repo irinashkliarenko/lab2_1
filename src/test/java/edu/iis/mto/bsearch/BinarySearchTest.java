@@ -9,10 +9,7 @@ import org.junit.Test;
 public class BinarySearchTest {
 
 	@Test
-	public void testCase1() {
-		/*Sprawdzenie czy element wyszukiwany jest w sekwencji
-		 sekwencji wejœciowej =1*/
-		
+	public void isSearchingElementInInputSequenceWhenInputSequenceLengthEquals1() {
 		int key = 3;
 		int[] seq = {3};
 		SearchResult result;
@@ -24,10 +21,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testCase2() {
-		/*sprawdzenie czy elementu wyszukiwanego 
-		nie ma w sekwencji przy sekwencji wejœciowej =1
-		*/
+	public void isSearchingElementAbsentInInputSequenceWhenInputSequnceLengthEquals1() {
 		int key = 4;
 		int[] seq = {3};
 		SearchResult result;
@@ -39,11 +33,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testCase3() {
-		/*sprawdzenie czy element wyszukiwany 
-		jest pierwszym elementem przy sekwencji wejœciowej >1
-		*/
-		
+	public void isSearchingElementOnFirstPositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
 		int key = 3;
 		int[] seq = {3, 5, 8, 10, 15, 17, 27};
 		SearchResult result;
@@ -55,10 +45,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testCase4() {
-		/*sprawdzenie czy element wyszukiwany 
-		jest ostatnim elementem przy sekwencji wejœciowej >1
-		*/
+	public void isSearchingElementOnLastPositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
 		SearchResult result;
 		int[] seq = {3, 5, 8, 10};
 		int key = 10;
@@ -70,10 +57,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testCase5() {
-		/*sprawdzenie czy element wyszukiwany 
-		jest œrodkowym elementem przy sekwencji wejœciowej >1
-		*/
+	public void isSearchingElementOnMiddlePositionInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
 		SearchResult result;
 		int[] seq = {3, 5, 8, 10, 15};
 		int key = 8;
@@ -89,10 +73,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testCase6() {
-		/*sprawdzenie czy elementu wyszukiwanego 
-		nie ma w sekwencji, przy sekwencji wejœciowej >1
-		*/
+	public void isSearchingElementAbsentInInputSequenceWhenInputSequenceLengthIsBiggerThan1() {
 		SearchResult result;
 		int[] seq = {3, 5};
 		int key = 2;
