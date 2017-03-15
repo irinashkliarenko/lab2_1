@@ -49,7 +49,18 @@ public class BinarySearchTest {
         assertTrue(searchResult.isFound());
         assertEquals(key,seq[1]);
         assertEquals(position,searchResult.getPosition());
-        
+
     }
 
+    @Test
+    public void isInputKeyLastRecordSeq() {
+        key = 9;
+        seq = new int[] {1, 2, 4, 6, 9};
+        position = 5;
+        searchResult=BinarySearch.search(key, seq);
+        assertTrue(searchResult.isFound());
+        assertEquals(key,seq[4]);
+        assertEquals(position,searchResult.getPosition());
+
+    }
 }
