@@ -21,7 +21,9 @@ public class BinarySearch {
 	 *         znaleziony -1)
 	 */
 	public static SearchResult search(int key, int[] seq) {
-		if(seq.length == 0) throw new IllegalArgumentException();
+		if(seq.length == 0) {
+			throw new IllegalArgumentException();
+		}
 		int start = 0;
 		int end = seq.length - 1;
 		int center;
@@ -33,10 +35,12 @@ public class BinarySearch {
 				result.setPosition(center);
 				break;
 			} else {
-				if (seq[center] < key)
+				if (seq[center] < key){
 					start = center + 1;
-				else
+				}
+				else {
 					end = center - 1;
+				}
 			}
 
 		}
