@@ -42,4 +42,16 @@ public class Testy_v2 {
 		SearchResult result = BinarySearch.search(key, seq);
 		assertThat(result.isFound(), Matchers.is(true));
 	}
+	@Test
+	public void keyBeforeCenter() {
+		key = 2;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), Matchers.is(true));
+	}
+	@Test
+	public void keyAfterCenter() {
+		key = 8;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), Matchers.is(true));
+	}
 }
