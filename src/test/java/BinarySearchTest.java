@@ -127,4 +127,27 @@ public class BinarySearchTest {
 
         BinarySearch.search(KEY, ARRAY);
     }
+
+    @Test
+    public void elementBeforeCenter() {
+        final int KEY = 3;
+        final int[] ARRAY = {1,  KEY,4 , 5, 6};
+        final int EXPECTED_POSITION = 1;
+
+        SearchResult result = BinarySearch.search(KEY, ARRAY);
+
+        assertThat(result.getPosition(), is(EXPECTED_POSITION));
+    }
+
+    @Test
+    public void elementAfterCenter() {
+        final int KEY = 5;
+        final int[] ARRAY = {1, 2, 4 , KEY, 6};
+        final int EXPECTED_POSITION = 3;
+
+        SearchResult result = BinarySearch.search(KEY, ARRAY);
+
+        assertThat(result.getPosition(), is(EXPECTED_POSITION));
+    }
+
 }
