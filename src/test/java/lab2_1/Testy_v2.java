@@ -1,8 +1,10 @@
 package lab2_1;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -17,20 +19,21 @@ public class Testy_v2 {
 	public void emptySequence() {
 		int[] seq = {};
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
+		assertThat(result.isFound(), Matchers.is(true));
 	}
 	
 	@Test
 	public void isFoundAndPosition() {
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound() );
-		Assert.assertEquals(key,seq[result.getPosition()]);
+		assertThat(result.isFound(), Matchers.is(true));
+		assertThat(key, Matchers.equalTo(seq[result.getPosition()]));
 	}
 
 	@Test
 	public void notFoundAndPosition() {
 		SearchResult result = BinarySearch.search(10, seq);
-		assertFalse(result.isFound() );
+		assertThat(result.isFound(), Matchers.is(false));
+		assertThat(result.getPosition(), Matchers.equalTo(-1));
 		Assert.assertEquals(-1,result.getPosition());
 	}
 	

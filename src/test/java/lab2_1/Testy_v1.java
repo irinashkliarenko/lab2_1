@@ -2,6 +2,7 @@ package lab2_1;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -15,16 +16,18 @@ public class Testy_v1 {
 		int key = 1;
 		
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
+		assertThat(result.isFound(), Matchers.is(true));
 	}
-	
+
+
+
 	@Test
 	public void notinSequenceLength1() {
 		int[] seq = {2};
 		int key = 1;
 		
 		SearchResult result = BinarySearch.search(key, seq);
-		assertFalse(result.isFound());
+		assertThat(result.isFound(), Matchers.is(false));
 	}
 	
 	@Test
@@ -33,7 +36,7 @@ public class Testy_v1 {
 		int key = 1;
 		
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
+		assertThat(result.isFound(), Matchers.is(true));
 	}
 	
 	@Test
@@ -42,7 +45,7 @@ public class Testy_v1 {
 		int key = 5;
 		
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
+		assertThat(result.isFound(), Matchers.is(true));
 	}
 	
 	@Test
@@ -51,7 +54,7 @@ public class Testy_v1 {
 		int key = 3;
 		
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
+		assertThat(result.isFound(), Matchers.is(true));
 	}
 	@Test
 	public void notInLongerSequence() {
@@ -59,7 +62,7 @@ public class Testy_v1 {
 		int key = 3;
 		
 		SearchResult result = BinarySearch.search(key, seq);
-		assertTrue(result.isFound());
+		assertThat(result.isFound(), Matchers.is(true));
 	}
 	
 
