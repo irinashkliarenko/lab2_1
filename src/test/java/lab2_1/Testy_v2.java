@@ -31,10 +31,9 @@ public class Testy_v2 {
 
 	@Test
 	public void notFoundAndPosition() {
-		SearchResult result = BinarySearch.search(10, seq);
+		SearchResult result = BinarySearch.search(20, seq);
 		assertThat(result.isFound(), Matchers.is(false));
 		assertThat(result.getPosition(), Matchers.equalTo(-1));
-		Assert.assertEquals(-1,result.getPosition());
 	}
 	
 }
