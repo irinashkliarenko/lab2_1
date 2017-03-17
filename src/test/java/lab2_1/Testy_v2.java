@@ -35,5 +35,11 @@ public class Testy_v2 {
 		assertThat(result.isFound(), Matchers.is(false));
 		assertThat(result.getPosition(), Matchers.equalTo(-1));
 	}
-	
+	@Test
+	public void keyInEvenSequence(){
+		seq = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		key = 5;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), Matchers.is(true));
+	}
 }
