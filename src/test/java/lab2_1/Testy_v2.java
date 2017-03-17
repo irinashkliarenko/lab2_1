@@ -1,5 +1,6 @@
 package lab2_1;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -21,11 +22,16 @@ public class Testy_v2 {
 	
 	@Test
 	public void isFoundAndPosition() {
-		
 		SearchResult result = BinarySearch.search(key, seq);
 		assertTrue(result.isFound() );
 		Assert.assertEquals(key,seq[result.getPosition()]);
-	
+	}
+
+	@Test
+	public void notFoundAndPosition() {
+		SearchResult result = BinarySearch.search(10, seq);
+		assertFalse(result.isFound() );
+		Assert.assertEquals(-1,result.getPosition());
 	}
 	
 }
