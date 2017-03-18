@@ -14,13 +14,13 @@ public class BinarySearchTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void notContainsAnyElement() {
+    public void testSearchResultIllegalArgumentException() {
         int key = 2;
         BinarySearch.search(key, new int[]{});
     }
 
     @Test
-    public void containsElementInSeq() {
+    public void testSearchResultKeyContainedInSeqIsFound() {
         int key = 2;
         int seq[] = new int[]{1, 2, 3, 4, 5, 6};
         SearchResult searchResult = BinarySearch.search(key, seq);
@@ -28,7 +28,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void containsElementInSeqPosition() {
+    public void testSearchResultKeyContainedInSeqPosition() {
         int key = 2;
         int position = 1;
         int seq[] = new int[]{1, key, 3, 4, 5, 6};
@@ -37,7 +37,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void keyNotIncludedInSequence() {
+    public void testSearchResultKeyNotContainedInSeqIsFound() {
         int key = 7;
         int seq[] = new int[]{1, 2, 3, 4, 5, 6};
         SearchResult searchResult = BinarySearch.search(key, seq);
@@ -45,7 +45,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void keyNotIncludedInSequencePosition() {
+    public void testSearchResultKeyNotContainedInSeqPosition() {
         int key = 7;
         int position = -1;
         int seq[] = new int[]{1, 2, 3, 4, 5, 6};
@@ -54,7 +54,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void isContentInSeqLenOnePosition() {
+    public void testSearchResultisKeyContainedInSeqLenOnePosition() {
         int key = 7;
         int seq[] = new int[]{key};
         int position = seq.length - 1;
@@ -63,7 +63,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void isContentInSeqLenOneFound() {
+    public void testSearchResultisKeyContainedInSeqLenOneFound() {
         int key = 7;
         int seq[] = new int[]{key};
         SearchResult searchResult = BinarySearch.search(key, seq);
@@ -73,7 +73,7 @@ public class BinarySearchTest {
 
 
     @Test
-    public void notContentInSeqLenOnePosition() {
+    public void testSearchResultisKeyNotContainedInSeqLenOnePosition() {
         int key = 7;
         int element = 1;
         int seq[] = new int[]{element};
@@ -83,7 +83,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void notContentInSeqLenOneFound() {
+    public void testSearchResultisKeyNotContainedInSeqLenOneFound() {
         int key = 7;
         int element = 1;
         int seq[] = new int[]{element};
@@ -92,7 +92,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsFirstInSeqPosition() {
+    public void testSearchResultKeyIsFirstInSeqPosition() {
         int key = 1;
         int seq[] = new int[]{key, 2, 3, 4, 5, 6};
         int pos = 0;
@@ -101,7 +101,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsFirstInSeqFound() {
+    public void testSearchResultKeyIsFirstInSeqFound() {
         int key = 1;
         int seq[] = new int[]{key, 2, 3, 4, 5, 6};
         SearchResult result = BinarySearch.search(key, seq);
@@ -109,7 +109,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsLastInSeqPosition() {
+    public void testSearchResultKeyIsLastInSeqPosition() {
         int key = 6;
         int seq[] = new int[]{1, 2, 3, 4, 5, key};
         int pos = seq.length - 1;
@@ -118,7 +118,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsLastInSeqFound() {
+    public void testSearchResultKeyIsLastInSeqFound() {
         int key = 6;
         int seq[] = new int[]{1, 2, 3, 4, 5, key};
         SearchResult result = BinarySearch.search(key, seq);
@@ -126,7 +126,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsMiddleInArray() {
+    public void testSearchResultKeyIsMiddleInArray() {
         int key = 3;
         int[] seq = {1, key, 5};
         int expectedPosition = 1;
@@ -135,7 +135,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void notContainsKeyInSeqPosition() {
+    public void testSearchResultNotContainsKeyInSeqPosition() {
         int key = 3;
         int[] seq = {1, 2, 5};
         int expectedPosition = -1;
@@ -144,7 +144,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void notContainsKeyInSeqFound() {
+    public void testSearchResultNotContainsKeyInSeqFound() {
         int key = 3;
         int[] ARRAY = {1, 2, 5};
         SearchResult result = BinarySearch.search(key, ARRAY);
