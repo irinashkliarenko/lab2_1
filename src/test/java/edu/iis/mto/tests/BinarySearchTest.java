@@ -27,5 +27,14 @@ public class BinarySearchTest {
         Assert.assertThat(searchResult.isFound(), is(true));
     }
 
+    @Test
+    public void containsElementInSeqPosition() {
+        int key = 2;
+        int position = 1;
+        int seq[] = new int[] {1,2,3,4,5,6};
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertEquals(key, seq[position]);
+        Assert.assertThat(searchResult.getPosition(), is(position));
+    }
 
 }
