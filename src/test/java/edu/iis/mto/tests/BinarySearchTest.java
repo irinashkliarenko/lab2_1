@@ -10,8 +10,8 @@ import static org.hamcrest.Matchers.is;
 /**
  * User: Klaudia
  */
-public class BinarySearchTest {
 
+public class BinarySearchTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testSearchResultIllegalArgumentException() {
@@ -195,4 +195,51 @@ public class BinarySearchTest {
         //Assertion
         assertThat(result.isFound(), is(false));
     }
+
+    @Test
+    public void testSearchResultKeyBeforeMiddleFound() {
+        //Arranging
+        int key = 2;
+        int[] ARRAY = {1, key, 3, 4, 5};
+        //Acting
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        //Assertion
+        assertThat(result.isFound(), is(true));
+    }
+
+    @Test
+    public void testSearchResultKeyAfterMiddleFound() {
+        //Arranging
+        int key = 4;
+        int[] ARRAY = {1, 2, 3, key, 5};
+        //Acting
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        //Assertion
+        assertThat(result.isFound(), is(true));
+    }
+
+    @Test
+    public void testSearchResultKeyBeforeMiddlePosition() {
+        //Arranging
+        int key = 2;
+        int[] ARRAY = {1, key, 3, 4, 5};
+        int position  =  1;
+        //Acting
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        //Assertion
+        assertThat(result.getPosition(), is(position));
+    }
+
+    @Test
+    public void testSearchResultKeyAfterMiddlePosition() {
+        //Arranging
+        int key = 4;
+        int[] ARRAY = {1, 2, 3, key, 5};
+        int position  =  3;
+        //Acting
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        //Assertion
+        assertThat(result.getPosition(), is(position));
+    }
+
 }
