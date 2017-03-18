@@ -2,16 +2,16 @@ package edu.iis.mto.tests;
 
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
-import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 /**
  * User: Klaudia
  */
 public class BinarySearchTest {
-    private int seq[] = new int[]{1, 2, 3, 4, 5, 6};
+
 
     @Test(expected = IllegalArgumentException.class)
     public void notContainsAnyElement() {
@@ -22,103 +22,125 @@ public class BinarySearchTest {
     @Test
     public void containsElementInSeq() {
         int key = 2;
+        int seq[] = new int[]{1, 2, 3, 4, 5, 6};
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.isFound(), is(true));
     }
 
     @Test
     public void containsElementInSeqPosition() {
         int key = 2;
         int position = 1;
+        int seq[] = new int[]{1, key, 3, 4, 5, 6};
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(key, seq[position]);
-        Assert.assertThat(searchResult.getPosition(), is(position));
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
     public void keyNotIncludedInSequence() {
         int key = 7;
+        int seq[] = new int[]{1, 2, 3, 4, 5, 6};
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertThat(searchResult.isFound(), is(false));
+        assertThat(searchResult.isFound(), is(false));
     }
 
     @Test
     public void keyNotIncludedInSequencePosition() {
         int key = 7;
         int position = -1;
+        int seq[] = new int[]{1, 2, 3, 4, 5, 6};
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(position, searchResult.getPosition());
+        assertThat(searchResult.getPosition(), is(position));
     }
 
     @Test
-    public void isContentInSeqLenOne() {
+    public void isContentInSeqLenOnePosition() {
         int key = 7;
         int seq[] = new int[]{key};
-        int pos = seq.length - 1;
+        int position = seq.length - 1;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertEquals(true, searchResult.isFound());
-        Assert.assertEquals(pos, searchResult.getPosition());
+        assertThat(searchResult.getPosition(), is(position));
+    }
+
+    @Test
+    public void isContentInSeqLenOneFound() {
+        int key = 7;
+        int seq[] = new int[]{key};
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertThat(searchResult.isFound(), is(true));
+
     }
 
 
     @Test
-    public void notContentInSeqLenOne() {
+    public void notContentInSeqLenOnePosition() {
         int key = 7;
-        int seq[] = new int[]{key};
+        int element = 1;
+        int seq[] = new int[]{element};
         int pos = -1;
-        SearchResult searchResult = BinarySearch.search(key + 1, seq);
-        Assert.assertEquals(false, searchResult.isFound());
-        Assert.assertEquals(pos, searchResult.getPosition());
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertThat(searchResult.getPosition(), is(pos));
+    }
+
+    @Test
+    public void notContentInSeqLenOneFound() {
+        int key = 7;
+        int element = 1;
+        int seq[] = new int[]{element};
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertThat(searchResult.isFound(), is(false));
     }
 
     @Test
     public void elementIsFirstInSeqPosition() {
         int key = 1;
+        int seq[] = new int[]{key, 2, 3, 4, 5, 6};
         int pos = 0;
         SearchResult result = BinarySearch.search(key, seq);
-        Assert.assertEquals(key, seq[pos]);
-        Assert.assertEquals(pos, result.getPosition());
+        assertThat(result.getPosition(), is(pos));
     }
 
     @Test
     public void elementIsFirstInSeqFound() {
         int key = 1;
+        int seq[] = new int[]{key, 2, 3, 4, 5, 6};
         SearchResult result = BinarySearch.search(key, seq);
-        Assert.assertEquals(true, result.isFound());
+        assertThat(result.isFound(), is(true));
     }
 
     @Test
     public void elementIsLastInSeqPosition() {
         int key = 6;
+        int seq[] = new int[]{1, 2, 3, 4, 5, key};
         int pos = seq.length - 1;
         SearchResult result = BinarySearch.search(key, seq);
-        Assert.assertEquals(key, seq[pos]);
-        Assert.assertEquals(pos, result.getPosition());
+        assertThat(result.getPosition(), is(pos));
     }
 
     @Test
     public void elementIsLastInSeqFound() {
         int key = 6;
+        int seq[] = new int[]{1, 2, 3, 4, 5, key};
         SearchResult result = BinarySearch.search(key, seq);
-        Assert.assertEquals(true, result.isFound());
+        assertThat(result.isFound(), is(true));
     }
 
     @Test
     public void elementIsMiddleInArray() {
         int key = 3;
-        int[] ARRAY = {1, key, 5};
-        int EXPECTED_POSITION = 1;
-        SearchResult result = BinarySearch.search(key, ARRAY);
-        Assert.assertThat(result.getPosition(), is(EXPECTED_POSITION));
+        int[] seq = {1, key, 5};
+        int expectedPosition = 1;
+        SearchResult result = BinarySearch.search(key, seq);
+        assertThat(result.getPosition(), is(expectedPosition));
     }
 
     @Test
     public void notContainsKeyInSeqPosition() {
         int key = 3;
-        int[] ARRAY = {1, 2, 5};
-        int EXPECTED_POSITION = -1;
-        SearchResult result = BinarySearch.search(key, ARRAY);
-        Assert.assertThat(result.getPosition(), is(EXPECTED_POSITION));
+        int[] seq = {1, 2, 5};
+        int expectedPosition = -1;
+        SearchResult result = BinarySearch.search(key, seq);
+        assertThat(result.getPosition(), is(expectedPosition));
     }
 
     @Test
@@ -126,6 +148,6 @@ public class BinarySearchTest {
         int key = 3;
         int[] ARRAY = {1, 2, 5};
         SearchResult result = BinarySearch.search(key, ARRAY);
-        Assert.assertThat(result.isFound(), is(false));
+        assertThat(result.isFound(), is(false));
     }
 }
