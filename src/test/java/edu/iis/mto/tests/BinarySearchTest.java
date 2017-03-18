@@ -5,7 +5,6 @@ import edu.iis.mto.bsearch.SearchResult;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 /**
@@ -80,6 +79,7 @@ public class BinarySearchTest {
         Assert.assertEquals(key, seq[pos]);
         Assert.assertEquals(pos, result.getPosition());
     }
+
     @Test
     public void elementIsFirstInSeqFound() {
         int key = 1;
@@ -95,6 +95,7 @@ public class BinarySearchTest {
         Assert.assertEquals(key, seq[pos]);
         Assert.assertEquals(pos, result.getPosition());
     }
+
     @Test
     public void elementIsLastInSeqFound() {
         int key = 6;
@@ -105,9 +106,26 @@ public class BinarySearchTest {
     @Test
     public void elementIsMiddleInArray() {
         int key = 3;
-        int[] ARRAY = {1,  key, 5};
+        int[] ARRAY = {1, key, 5};
         int EXPECTED_POSITION = 1;
         SearchResult result = BinarySearch.search(key, ARRAY);
         Assert.assertThat(result.getPosition(), is(EXPECTED_POSITION));
+    }
+
+    @Test
+    public void notContainsKeyInSeqPosition() {
+        int key = 3;
+        int[] ARRAY = {1, 2, 5};
+        int EXPECTED_POSITION = -1;
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        Assert.assertThat(result.getPosition(), is(EXPECTED_POSITION));
+    }
+
+    @Test
+    public void notContainsKeyInSeqFound() {
+        int key = 3;
+        int[] ARRAY = {1, 2, 5};
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        Assert.assertThat(result.isFound(), is(false));
     }
 }
