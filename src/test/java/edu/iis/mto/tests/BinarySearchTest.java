@@ -64,4 +64,14 @@ public class BinarySearchTest {
         Assert.assertEquals(pos, searchResult.getPosition());
     }
 
+
+    @Test
+    public void notContentInSeqLenOne(){
+        int key = 7;
+        int seq[] = new int[]{key};
+        int pos =  -1;
+        SearchResult searchResult = BinarySearch.search(key+1, seq);
+        Assert.assertEquals(false, searchResult.isFound());
+        Assert.assertEquals(pos, searchResult.getPosition());
+    }
 }
