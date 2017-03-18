@@ -5,6 +5,7 @@ import edu.iis.mto.bsearch.SearchResult;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 /**
@@ -99,5 +100,14 @@ public class BinarySearchTest {
         int key = 6;
         SearchResult result = BinarySearch.search(key, seq);
         Assert.assertEquals(true, result.isFound());
+    }
+
+    @Test
+    public void elementIsMiddleInArray() {
+        int key = 3;
+        int[] ARRAY = {1,  key, 5};
+        int EXPECTED_POSITION = 1;
+        SearchResult result = BinarySearch.search(key, ARRAY);
+        Assert.assertThat(result.getPosition(), is(EXPECTED_POSITION));
     }
 }
