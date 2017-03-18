@@ -44,4 +44,13 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(key, seq);
         Assert.assertThat(searchResult.isFound(), is(false));
     }
+
+    @Test
+    public void keyNotIncludedInSequencePosition(){
+        int key = 7;
+        int position = -1;
+        int seq[] = new int[] {1,2,3,4,5,6};
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertEquals(position, searchResult.getPosition());
+    }
 }
