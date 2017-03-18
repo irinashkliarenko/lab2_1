@@ -79,4 +79,11 @@ public class BinarySearchTest {
         Assert.assertEquals(pos, result.getPosition());
     }
 
+    @Test
+    public void elementIsLastInSeq() {
+        int key = 6;
+        int pos = seq.length - 1;
+        SearchResult result = BinarySearch.search(key, seq);
+        Assert.assertEquals(pos, result.getPosition());
+    }
 }
