@@ -72,18 +72,32 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void elementIsFirstInSeq() {
+    public void elementIsFirstInSeqPosition() {
         int key = 1;
         int pos = 0;
         SearchResult result = BinarySearch.search(key, seq);
         Assert.assertEquals(pos, result.getPosition());
     }
+    @Test
+    public void elementIsFirstInSeqFound() {
+        int key = 1;
+        int pos = 0;
+        SearchResult result = BinarySearch.search(key, seq);
+        Assert.assertEquals(true, result.isFound());
+    }
 
     @Test
-    public void elementIsLastInSeq() {
+    public void elementIsLastInSeqPosition() {
         int key = 6;
         int pos = seq.length - 1;
         SearchResult result = BinarySearch.search(key, seq);
         Assert.assertEquals(pos, result.getPosition());
+    }
+    @Test
+    public void elementIsLastInSeqFound() {
+        int key = 6;
+        int pos = seq.length - 1;
+        SearchResult result = BinarySearch.search(key, seq);
+        Assert.assertEquals(true, result.isFound());
     }
 }
