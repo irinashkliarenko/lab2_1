@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.is;
  * User: Klaudia
  */
 public class BinarySearchTest {
-    int seq[] = new int[]{1, 2, 3, 4, 5, 6};
+    private int seq[] = new int[]{1, 2, 3, 4, 5, 6};
 
     @Test(expected = IllegalArgumentException.class)
     public void notContainsAnyElement() {
@@ -76,12 +76,12 @@ public class BinarySearchTest {
         int key = 1;
         int pos = 0;
         SearchResult result = BinarySearch.search(key, seq);
+        Assert.assertEquals(key, seq[pos]);
         Assert.assertEquals(pos, result.getPosition());
     }
     @Test
     public void elementIsFirstInSeqFound() {
         int key = 1;
-        int pos = 0;
         SearchResult result = BinarySearch.search(key, seq);
         Assert.assertEquals(true, result.isFound());
     }
@@ -91,12 +91,12 @@ public class BinarySearchTest {
         int key = 6;
         int pos = seq.length - 1;
         SearchResult result = BinarySearch.search(key, seq);
+        Assert.assertEquals(key, seq[pos]);
         Assert.assertEquals(pos, result.getPosition());
     }
     @Test
     public void elementIsLastInSeqFound() {
         int key = 6;
-        int pos = seq.length - 1;
         SearchResult result = BinarySearch.search(key, seq);
         Assert.assertEquals(true, result.isFound());
     }
