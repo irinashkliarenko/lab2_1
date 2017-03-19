@@ -22,6 +22,7 @@ public class TestyV1 {
 		
 		SearchResult result = BinarySearch.search(key, seqWithOneElement);
 		assertTrue(result.isFound());
+		assertEquals(seqWithOneElement[result.getPosition()-1], key);
 	}
 	
 	@Test
@@ -46,6 +47,7 @@ public class TestyV1 {
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertEquals(1, result.getPosition());
+		assertEquals(seqWithManyElements[result.getPosition()-1], key);
 	}
 	
 	@Test
@@ -57,6 +59,7 @@ public class TestyV1 {
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertEquals(seqWithManyElements.length, result.getPosition());
+		assertEquals(seqWithManyElements[result.getPosition()-1], key);
 	}
 	
 	@Test
@@ -72,6 +75,7 @@ public class TestyV1 {
 		int center = (start + end) / 2;
 		
 		assertEquals(center+1, result.getPosition());
+		assertEquals(seqWithManyElements[result.getPosition()-1], key);
 	}
 	
 	@Test
