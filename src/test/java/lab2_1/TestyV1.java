@@ -33,6 +33,7 @@ public class TestyV1 {
 		
 		SearchResult result = BinarySearch.search(key, seqWithOneElement);
 		assertFalse(result.isFound());
+		assertEquals(result.getPosition(), -1);
 	}
 	
 	@Test
@@ -81,5 +82,6 @@ public class TestyV1 {
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertFalse(result.isFound());
+		assertEquals(result.getPosition(), -1);
 	}
 }
