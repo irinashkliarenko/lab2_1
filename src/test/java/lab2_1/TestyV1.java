@@ -10,6 +10,7 @@ import edu.iis.mto.bsearch.SearchResult;
 
 public class TestyV1 {
 	
+	private final int[] seqWithZeroElements = {};
 	private final int[] seqWithOneElement = {1};
 	private final int[] seqWithManyElements = {1,3,5};
 	
@@ -89,5 +90,12 @@ public class TestyV1 {
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertFalse(result.isFound());
 		assertEquals(result.getPosition(), KEY_NOT_FOUND_INDICATOR);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testForIllegalArgumentException() {
+		
+		int key = 1;
+		SearchResult result = BinarySearch.search(key, seqWithZeroElements);
 	}
 }
