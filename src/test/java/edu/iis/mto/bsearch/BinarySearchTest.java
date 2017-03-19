@@ -129,4 +129,20 @@ public class BinarySearchTest {
 		Assert.assertThat(center-1, is(result.getPosition()-1));
 		Assert.assertThat(seqWithFiveElements[result.getPosition()-1], is(key));
 	}
+	
+	@Test
+	public void testKeyIsCenterPlusOneElementInSeqWithFiveElements() {
+		
+		int key = 7;
+		
+		Assert.assertThat(seqWithFiveElements.length, greaterThan(1));
+		
+		SearchResult result = BinarySearch.search(key, seqWithFiveElements);
+		int start = 0;
+		int end = seqWithFiveElements.length - 1;
+		int center = (start + end) / 2;
+		
+		Assert.assertThat(center+1, is(result.getPosition()-1));
+		Assert.assertThat(seqWithFiveElements[result.getPosition()-1], is(key));
+	}
 }
