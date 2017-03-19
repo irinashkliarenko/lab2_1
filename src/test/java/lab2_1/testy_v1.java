@@ -1,9 +1,13 @@
 package lab2_1;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.matchers.JUnitMatchers.*;
 
+import org.hamcrest.core.IsEqual;
 import org.junit.Assert;
 import org.junit.Test;
+
 
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
@@ -20,9 +24,8 @@ public class testy_v1 {
 		int[] seq ={2};
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
-		
-		assertTrue(result.isFound());
-		
+
+		Assert.assertThat(result.isFound(), is(true));
 		
 	}
 	
@@ -35,7 +38,8 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key,seq);
 		
-		assertFalse(result.isFound());
+
+		Assert.assertThat(result.isFound(), is(not(true)));
 		
 	}
 	
@@ -46,7 +50,8 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-		assertEquals(1, result.getPosition());
+
+		Assert.assertThat(result.getPosition(), is(1));
 		
 	}
 	
@@ -57,7 +62,8 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-		assertEquals(seq.length, result.getPosition());
+
+		Assert.assertThat(result.getPosition(), is(seq.length));
 		
 		
 	}
@@ -69,7 +75,8 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-		assertEquals((seq.length/2), result.getPosition());
+
+		Assert.assertThat(result.getPosition(), is(seq.length/2));
 	}
 	
 	
@@ -80,7 +87,8 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-		assertEquals(-1, result.getPosition());
+
+		Assert.assertThat(result.getPosition(), is(-1));
 		
 	}
 	
