@@ -15,6 +15,7 @@ public class BinarySearchTest {
 	private final int[] seqWithOneElement = {1};
 	private final int[] seqWithThreeElements = {1,3,5};
 	private final int[] seqWithFourElements = {1,3,5,7};
+	private final int[] seqWithFiveElements = {1,3,5,7,9};
 	
 	@Test
 	public void testKeyIsFoundInSeqWithOneElement() {
@@ -111,5 +112,21 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(key, seqWithFourElements);
 		Assert.assertThat(3, is(result.getPosition()));
 		Assert.assertThat(seqWithThreeElements[result.getPosition()-1], is(key));
+	}
+	
+	@Test
+	public void testKeyIsCenterMinusOneElementInSeqWithFiveElements() {
+		
+		int key = 3;
+		
+		Assert.assertThat(seqWithFiveElements.length, greaterThan(1));
+		
+		SearchResult result = BinarySearch.search(key, seqWithFiveElements);
+		int start = 0;
+		int end = seqWithFiveElements.length - 1;
+		int center = (start + end) / 2;
+		
+		Assert.assertThat(center-1, is(result.getPosition()-1));
+		Assert.assertThat(seqWithFiveElements[result.getPosition()-1], is(key));
 	}
 }
