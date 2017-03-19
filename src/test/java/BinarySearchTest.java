@@ -82,4 +82,15 @@ public class BinarySearchTest {
 
         SearchResult result = BinarySearch.search(value, seq);
     }
+
+    @Test
+    public void searchForNonExistingValueInMultipleElementOddSequence() {
+        int[] seq = {2, 4, 6, 8, 10, 12, 14};
+        int value = 7;
+        final int EXPECTED_VALUE = -1;
+
+        SearchResult result = BinarySearch.search(value, seq);
+        assertThat(result.isFound(), is(false));
+        assertThat(result.getPosition(), is(EXPECTED_VALUE));
+    }
 }
