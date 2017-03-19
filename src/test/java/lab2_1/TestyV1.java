@@ -28,12 +28,13 @@ public class TestyV1 {
 	public void testKeyIsNotFoundInSeqWithOneElement() {
 		
 		int key = 2;
+		final int KEY_NOT_FOUND_INDICATOR = -1;
 		
 		assertTrue(seqWithOneElement.length == 1);
 		
 		SearchResult result = BinarySearch.search(key, seqWithOneElement);
 		assertFalse(result.isFound());
-		assertEquals(result.getPosition(), -1);
+		assertEquals(result.getPosition(), KEY_NOT_FOUND_INDICATOR);
 	}
 	
 	@Test
@@ -77,11 +78,12 @@ public class TestyV1 {
 	public void testKeyIsNotFoundInSeqWithManyElements() {
 
 		int key = 2;
+		final int KEY_NOT_FOUND_INDICATOR = -1;
 		
 		assertTrue(seqWithManyElements.length > 1);
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		assertFalse(result.isFound());
-		assertEquals(result.getPosition(), -1);
+		assertEquals(result.getPosition(), KEY_NOT_FOUND_INDICATOR);
 	}
 }
