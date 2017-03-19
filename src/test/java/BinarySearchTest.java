@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class BinarySearchTest {
 
     @Test
-    public void testValueIsInOneElementSeq() {
+    public void searchForExistingValueInSingleElementSequence() {
         int[] seq = {1};
         int value = 1;
 
@@ -22,7 +22,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testValueIsNotInOneElementSeq() {
+    public void searchForNonExistingValueInSingleElementSequence() {
         int[] seq = {1};
         int value = 2;
 
@@ -32,7 +32,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testValueIsFirstElementInSeq() {
+    public void searchForExistingValueInMultipleElementSequence_valueIsFirst() {
         int[] seq = {1, 2, 3};
         int value = 1;
         final int EXPECTED_VALUE = 0;
@@ -43,7 +43,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testValueIsLastElementInSeq() {
+    public void searchForExistingValueInMultipleElementSequence_valueIsLast() {
         int[] seq = {1, 2, 3};
         int value = 3;
         final int EXPECTED_VALUE = seq.length - 1;
@@ -54,7 +54,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testValueIsCenterElementInSeq() {
+    public void searchForExistingValueInMultipleElementSequence_valueIsInTheMiddle() {
         int[] seq = {1, 2, 3};
         int value = 2;
         final int EXPECTED_VALUE = 1;
@@ -65,7 +65,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testValueIsNotInSeq() {
+    public void searchForNonExistingValueInMultipleElementSequence() {
         int[] seq = {1, 2, 3};
         int value = 4;
         final int EXPECTED_VALUE = -1;
@@ -76,7 +76,7 @@ public class BinarySearchTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testEmptySeq() {
+    public void exeptionTest_searchValueInEmptySequence() {
         int[] seq = {};
         int value = 1;
 
