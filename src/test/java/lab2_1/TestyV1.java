@@ -1,8 +1,9 @@
 package lab2_1;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.greaterThan;
 
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -19,11 +20,11 @@ public class TestyV1 {
 		
 		int key = 1;
 		
-		assertTrue(seqWithOneElement.length == 1);
+		Assert.assertThat(seqWithOneElement.length, is(1));
 		
 		SearchResult result = BinarySearch.search(key, seqWithOneElement);
-		assertTrue(result.isFound());
-		assertEquals(seqWithOneElement[result.getPosition()-1], key);
+		Assert.assertThat(result.isFound(), is(true));
+		Assert.assertThat(seqWithOneElement[result.getPosition()-1], is(key));
 	}
 	
 	@Test
@@ -32,11 +33,11 @@ public class TestyV1 {
 		int key = 2;
 		final int KEY_NOT_FOUND_INDICATOR = -1;
 		
-		assertTrue(seqWithOneElement.length == 1);
+		Assert.assertThat(seqWithOneElement.length, is(1));
 		
 		SearchResult result = BinarySearch.search(key, seqWithOneElement);
-		assertFalse(result.isFound());
-		assertEquals(result.getPosition(), KEY_NOT_FOUND_INDICATOR);
+		Assert.assertThat(result.isFound(), is(false));
+		Assert.assertThat(result.getPosition(), is(KEY_NOT_FOUND_INDICATOR));
 	}
 	
 	@Test
@@ -44,11 +45,11 @@ public class TestyV1 {
 		
 		int key = 1;
 		
-		assertTrue(seqWithManyElements.length > 1);
+		Assert.assertThat(seqWithManyElements.length, greaterThan(1));
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
-		assertEquals(1, result.getPosition());
-		assertEquals(seqWithManyElements[result.getPosition()-1], key);
+		Assert.assertThat(1, is(result.getPosition()));
+		Assert.assertThat(seqWithManyElements[result.getPosition()-1], is(key));
 	}
 	
 	@Test
@@ -56,11 +57,11 @@ public class TestyV1 {
 		
 		int key = 5;
 		
-		assertTrue(seqWithManyElements.length > 1);
+		Assert.assertThat(seqWithManyElements.length, greaterThan(1));
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
-		assertEquals(seqWithManyElements.length, result.getPosition());
-		assertEquals(seqWithManyElements[result.getPosition()-1], key);
+		Assert.assertThat(seqWithManyElements.length, is(result.getPosition()));
+		Assert.assertThat(seqWithManyElements[result.getPosition()-1], is(key));
 	}
 	
 	@Test
@@ -68,15 +69,15 @@ public class TestyV1 {
 		
 		int key = 3;
 		
-		assertTrue(seqWithManyElements.length > 1);
+		Assert.assertThat(seqWithManyElements.length, greaterThan(1));
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
 		int start = 0;
 		int end = seqWithManyElements.length - 1;
 		int center = (start + end) / 2;
 		
-		assertEquals(center+1, result.getPosition());
-		assertEquals(seqWithManyElements[result.getPosition()-1], key);
+		Assert.assertThat(center+1, is(result.getPosition()));
+		Assert.assertThat(seqWithManyElements[result.getPosition()-1], is(key));
 	}
 	
 	@Test
@@ -85,17 +86,17 @@ public class TestyV1 {
 		int key = 2;
 		final int KEY_NOT_FOUND_INDICATOR = -1;
 		
-		assertTrue(seqWithManyElements.length > 1);
+		Assert.assertThat(seqWithManyElements.length, greaterThan(1));
 		
 		SearchResult result = BinarySearch.search(key, seqWithManyElements);
-		assertFalse(result.isFound());
-		assertEquals(result.getPosition(), KEY_NOT_FOUND_INDICATOR);
+		Assert.assertThat(result.isFound(), is(false));
+		Assert.assertThat(result.getPosition(), is(KEY_NOT_FOUND_INDICATOR));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testForIllegalArgumentException() {
 		
 		int key = 1;
-		SearchResult result = BinarySearch.search(key, seqWithZeroElements);
+		BinarySearch.search(key, seqWithZeroElements);
 	}
 }
