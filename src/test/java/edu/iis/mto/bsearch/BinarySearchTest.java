@@ -1,4 +1,4 @@
-package lab2_1;
+package edu.iis.mto.bsearch;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.greaterThan;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 
-public class TestyV1 {
+public class BinarySearchTest {
 	
 	private final int[] seqWithZeroElements = {};
 	private final int[] seqWithOneElement = {1};
