@@ -28,7 +28,7 @@ public class testy_v1 {
 		SearchResult result = binarySearch.search(key, seq);
 
 		Assert.assertThat(result.isFound(), is(true));
-		
+		Assert.assertThat(result.getPosition(), is(1));
 	}
 	
 	
@@ -42,7 +42,7 @@ public class testy_v1 {
 		
 
 		Assert.assertThat(result.isFound(), is(not(true)));
-		
+		Assert.assertThat(result.getPosition(), is(-1));
 	}
 	
 	@Test
@@ -52,7 +52,7 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-
+		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(1));
 		
 	}
@@ -64,7 +64,7 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-
+		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(seq.length));
 		
 		
@@ -77,7 +77,7 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-
+		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(seq.length/2));
 	}
 	
@@ -88,6 +88,7 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq2);
 		
+		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(seq2.length/2));
 	}
 	
@@ -98,7 +99,7 @@ public class testy_v1 {
 		BinarySearch binarySearch = new BinarySearch();
 		SearchResult result = binarySearch.search(key, seq);
 		
-
+		Assert.assertThat(result.isFound(), is(not(true)));
 		Assert.assertThat(result.getPosition(), is(-1));
 		
 	}
