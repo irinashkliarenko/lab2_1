@@ -68,6 +68,12 @@ public class BinarySearchTest {
     }
 
 
+    @Test(expected = IllegalArgumentException.class)
+    public void emptySequence() throws Exception {
+        BinarySearch.search(element, new int[0]);
+    }
+
+
 
 
 
