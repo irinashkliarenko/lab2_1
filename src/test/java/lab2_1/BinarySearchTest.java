@@ -2,7 +2,8 @@ package lab2_1;
 
 
 import static org.hamcrest.CoreMatchers.*;
-
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 
 
 import org.junit.Assert;
@@ -101,9 +102,26 @@ public class BinarySearchTest {
 		
 		Assert.assertThat(result.isFound(), is(not(true)));
 		Assert.assertThat(result.getPosition(), is(-1));
-		
 	}
 	
+	@Test
+	public void testKeyIsInTheFirstHalfOfTheSequence() {
+		
+		int key = 5;
+		BinarySearch binarySearch = new BinarySearch();
+		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		Assert.assertThat(result.getPosition(), lessThanOrEqualTo(evenSeq.length/2));
+	}
 	
+	@Test
+	public void testKeyIsInTheSecondHalfOfTheSequence() {
 	
+		int key = 8;
+		BinarySearch binarySearch = new BinarySearch();
+		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		Assert.assertThat(result.getPosition(), greaterThanOrEqualTo((evenSeq.length/2)+1));
+	
+	}
 }
