@@ -65,5 +65,10 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (4));
     }
+    @Test (expected = IllegalArgumentException.class)
+    public void noElementsInSequence() throws Exception{
+        int [] arrayOfNumber = new int [0];
+        BinarySearch.search(11,arrayOfNumber);
+    }
 
 }
