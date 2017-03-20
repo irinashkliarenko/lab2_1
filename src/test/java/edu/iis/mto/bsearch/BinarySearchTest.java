@@ -34,5 +34,13 @@ public class BinarySearchTest {
         assertEquals(true, searchResult.isFound());
         assertEquals(1, searchResult.getPosition());
     }
+    @Test
+    public void lastElementInSequence() throws Exception {
+        int[] arrayOfNumber = new int[]{1,2,3,4};
+        SearchResult searchResult = BinarySearch.search(4, arrayOfNumber);
+        assertEquals(true, searchResult.isFound());
+        assertEquals(4, searchResult.getPosition());
+    }
+
 
 }
