@@ -25,6 +25,9 @@ public class BinarySearch {
 		int end = seq.length - 1;
 		int center;
 		SearchResult result = new SearchResult();
+		if(seq.length < 1)	{
+			throw new IllegalArgumentException("Cannot be empty");
+		}
 
 		while (start <= end) {
 			center = (start + end) / 2;
