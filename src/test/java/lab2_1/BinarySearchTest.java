@@ -25,8 +25,7 @@ public class BinarySearchTest {
 		
 		int key = 2;
 		int[] seq ={2};
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, seq);
+		SearchResult result = BinarySearch.search(key, seq);
 
 		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(1));
@@ -38,9 +37,8 @@ public class BinarySearchTest {
 		
 		int key = 2;
 		int[] seq = { 3 }; 
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key,seq);
 		
+		SearchResult result = BinarySearch.search(key,seq);
 
 		Assert.assertThat(result.isFound(), is(not(true)));
 		Assert.assertThat(result.getPosition(), is(-1));
@@ -50,33 +48,30 @@ public class BinarySearchTest {
 	public void testIsKeyFirstInTheSequence() {
 		
 		int key = 3;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		SearchResult result = BinarySearch.search(key, evenSeq);
 		
 		Assert.assertThat(result.isFound(), is(true));
-		Assert.assertThat(result.getPosition(), is(1));
-		
+		Assert.assertThat(result.getPosition(), is(1));	
 	}
 	
 	@Test
 	public void testIsKeyLastInTheSequence() {
 		
 		int key = 12;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		SearchResult result = BinarySearch.search(key, evenSeq);
 		
 		Assert.assertThat(result.isFound(), is(true));
-		Assert.assertThat(result.getPosition(), is(evenSeq.length));
-		
-		
+		Assert.assertThat(result.getPosition(), is(evenSeq.length));	
 	}
 	
 	@Test 
 	public void testIsKeyInTheMiddleOfTheEvenSequence() {
 		
 		int key = 7;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		SearchResult result = BinarySearch.search(key, evenSeq);
 		
 		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(evenSeq.length/2));
@@ -86,8 +81,8 @@ public class BinarySearchTest {
 	public void testIsKeyInTheMiddleOfTheOddSequence() {
 		
 		int key = 7;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, oddSeq);
+		
+		SearchResult result = BinarySearch.search(key, oddSeq);
 		
 		Assert.assertThat(result.isFound(), is(true));
 		Assert.assertThat(result.getPosition(), is(oddSeq.length/2));
@@ -97,8 +92,8 @@ public class BinarySearchTest {
 	public void testKeyIsNotInTheSequenceWithLengthGreaterThanOne() {
 		
 		int key = 15;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		SearchResult result = BinarySearch.search(key, evenSeq);
 		
 		Assert.assertThat(result.isFound(), is(not(true)));
 		Assert.assertThat(result.getPosition(), is(-1));
@@ -108,8 +103,8 @@ public class BinarySearchTest {
 	public void testKeyIsInTheFirstHalfOfTheSequence() {
 		
 		int key = 5;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		SearchResult result = BinarySearch.search(key, evenSeq);
 		
 		Assert.assertThat(result.getPosition(), lessThanOrEqualTo(evenSeq.length/2));
 	}
@@ -118,10 +113,9 @@ public class BinarySearchTest {
 	public void testKeyIsInTheSecondHalfOfTheSequence() {
 	
 		int key = 8;
-		BinarySearch binarySearch = new BinarySearch();
-		SearchResult result = binarySearch.search(key, evenSeq);
+		
+		SearchResult result = BinarySearch.search(key, evenSeq);
 		
 		Assert.assertThat(result.getPosition(), greaterThanOrEqualTo((evenSeq.length/2)+1));
-	
 	}
 }
