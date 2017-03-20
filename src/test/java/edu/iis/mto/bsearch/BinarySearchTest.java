@@ -18,14 +18,14 @@ public class BinarySearchTest {
     }
     @Test
     public void oneElementIsNotInSequence() throws Exception {
-        int[] arrayOfNumber = new int[]{1};
+        int[] arrayOfNumber = new int[]{5};
         SearchResult searchResult = BinarySearch.search(6, arrayOfNumber);
         assertThat(searchResult.isFound(), is (false));
         assertThat(searchResult.getPosition(), is (-1));
     }
     @Test
     public void firstElementInSequence() throws Exception {
-        int[] arrayOfNumber = new int[]{1,2,3,4};
+        int[] arrayOfNumber = new int[]{1,2,3,4,5,6};
         SearchResult searchResult = BinarySearch.search(1, arrayOfNumber);
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (1));
@@ -50,6 +50,20 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(6, arrayOfNumber);
         assertThat(searchResult.isFound(), is (false));
         assertThat(searchResult.getPosition(), is (-1));
+    }
+    @Test
+    public void beforeMiddleElementIsInSequence() throws Exception {
+        int[] arrayOfNumber = new int[]{1,2,3,4,5};
+        SearchResult searchResult = BinarySearch.search(2, arrayOfNumber);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (2));
+    }
+    @Test
+    public void afterMiddleElementIsInSequence() throws Exception {
+        int[] arrayOfNumber = new int[]{1,2,3,4,5};
+        SearchResult searchResult = BinarySearch.search(4, arrayOfNumber);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (4));
     }
 
 }
