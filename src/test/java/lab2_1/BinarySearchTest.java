@@ -1,10 +1,10 @@
 package lab2_1;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.matchers.JUnitMatchers.*;
 
-import org.hamcrest.core.IsEqual;
+import static org.hamcrest.CoreMatchers.*;
+
+
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 
 
-public class testy_v1 {
+public class BinarySearchTest {
 
 	int[] seq = {  3, 4, 5, 6,  7, 8, 9, 10, 11, 12};
 	int[] seq2 = {  3, 4, 5, 6,  7, 8, 9, 10, 11, 12, 13};
