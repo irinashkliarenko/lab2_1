@@ -90,4 +90,13 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), equalTo(2+1));
     }
+
+    @Test
+    public void elementIsInMiddleMinusOneOfSequence() throws Exception {
+
+        seq = new int[] {element - 235, element, element + 56, element + 666};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), equalTo(2-1));
+    }
 }
