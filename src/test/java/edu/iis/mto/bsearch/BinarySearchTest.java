@@ -47,4 +47,12 @@ public class BinarySearchTest {
         Assert.assertTrue(result.isFound());
         Assert.assertTrue(result.getPosition()==2);
     }
+
+    @Test public void testIfKeyIsNotInSeq() {
+        int key = 10;
+        int[] seq = {2,3,4};
+        SearchResult result =  BinarySearch.search(key,seq);
+        Assert.assertTrue(!result.isFound());
+        Assert.assertTrue(result.getPosition()==-1);
+    }
 }
