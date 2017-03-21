@@ -62,5 +62,12 @@ public class SearchTest {
 		assertThat(BinarySearch.search(10, sequence).isFound(), Matchers.is(false));
 		assertThat(BinarySearch.search(10, sequence).getPosition(), Matchers.is(-1));
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testIsNoElementsInSequence() throws Exception{
+		
+		int [] tab = new int [0];
+		BinarySearch.search(10,tab);
+	}
 
 }
