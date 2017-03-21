@@ -12,22 +12,24 @@ public class BinarySearchTest {
 	private static final int NOT_IN_SEQUENCE = 10;
 	
 	private static int[] arrayUnderTest;
+	private static int[] oneElementArray;
 
 	
 	@BeforeClass
 	public static void setUpClass() {
 		arrayUnderTest = new int[] { FIRST_ELEMENT, 2, 3, 4, MIDDLE_ELEMENT, 6, 7, 8, LAST_ELEMENT };
+		oneElementArray = new int[] {IN_SEQUENCE};
 	}
 	
 	@org.junit.Test
 	public void testNr1() {
-		SearchResult result = BinarySearch.search(IN_SEQUENCE, arrayUnderTest);
+		SearchResult result = BinarySearch.search(IN_SEQUENCE, oneElementArray);
 		Assert.assertEquals(true, result.isFound());
 	}
 	
 	@org.junit.Test
 	public void testNr2() {
-		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
+		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, oneElementArray);
 		Assert.assertEquals(false, result.isFound());
 	}
 	
