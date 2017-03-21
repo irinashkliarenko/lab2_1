@@ -1,6 +1,6 @@
 package edu.iis.mto.bsearch.test;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import edu.iis.mto.bsearch.*;
 
@@ -24,36 +24,42 @@ public class BinarySearchTest {
 	@org.junit.Test
 	public void testNr1() {
 		SearchResult result = BinarySearch.search(IN_SEQUENCE, oneElementArray);
-		Assert.assertEquals(true, result.isFound());
+		assertEquals(0, result.getPosition());
+		assertEquals(true, result.isFound());
 	}
 	
 	@org.junit.Test
 	public void testNr2() {
 		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, oneElementArray);
-		Assert.assertEquals(false, result.isFound());
+		assertEquals(-1, result.getPosition());
+		assertEquals(false, result.isFound());
 	}
 	
 	@org.junit.Test
 	public void testNr3() {
 		SearchResult result = BinarySearch.search(FIRST_ELEMENT, arrayUnderTest);
-		Assert.assertEquals(true, result.isFound());
+		assertEquals(0, result.getPosition());
+		assertEquals(true, result.isFound());
 	}
 	
 	@org.junit.Test
 	public void testNr4() {
 		SearchResult result = BinarySearch.search(LAST_ELEMENT, arrayUnderTest);
-		Assert.assertEquals(true, result.isFound());
+		assertEquals(arrayUnderTest.length-1, result.getPosition());
+		assertEquals(true, result.isFound());
 	}
 	
 	@org.junit.Test
 	public void testNr5() {
 		SearchResult result = BinarySearch.search(MIDDLE_ELEMENT, arrayUnderTest);
-		Assert.assertEquals(true, result.isFound());
+		assertEquals(arrayUnderTest.length/2, result.getPosition());
+		assertEquals(true, result.isFound());
 	}
 	
 	@org.junit.Test
 	public void testNr6() {
 		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
-		Assert.assertEquals(false, result.isFound());
+		assertEquals(-1, result.getPosition());
+		assertEquals(false, result.isFound());
 	}
 }
