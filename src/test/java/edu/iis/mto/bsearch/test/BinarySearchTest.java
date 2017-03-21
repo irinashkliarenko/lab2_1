@@ -78,4 +78,13 @@ public class BinarySearchTest {
 		assertThat(result.getPosition(), equalTo(seq.length/2));
 		assertThat(result.isFound(), is(true));
 	}
+	
+	@org.junit.Test
+	public void testFindFirstElement() {
+		int searched = 40;
+		int[] seq = new int[] {searched, searched + 1, searched + 2, searched +3, searched + 4};
+		SearchResult result = BinarySearch.search(searched, seq);
+		assertThat(result.getPosition(), equalTo(0));
+		assertThat(result.isFound(), is(true));
+	}
 }
