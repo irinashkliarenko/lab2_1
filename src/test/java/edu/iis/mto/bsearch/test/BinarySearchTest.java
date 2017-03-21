@@ -18,4 +18,22 @@ public class BinarySearchTest {
 	public static void setUpClass() {
 		arrayUnderTest = new int[] { FIRST_ELEMENT, 2, 3, 4, MIDDLE_ELEMENT, 6, 7, 8, LAST_ELEMENT };
 	}
+	
+	@org.junit.Test
+	public void testNr1() {
+		SearchResult result = BinarySearch.search(IN_SEQUENCE, arrayUnderTest);
+		Assert.assertEquals(true, result.isFound());
+	}
+	
+	@org.junit.Test
+	public void testNr2() {
+		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
+		Assert.assertEquals(false, result.isFound());
+	}
+	
+	@org.junit.Test
+	public void testNr3() {
+		SearchResult result = BinarySearch.search(FIRST_ELEMENT, arrayUnderTest);
+		Assert.assertEquals(true, result.isFound());
+	}
 }
