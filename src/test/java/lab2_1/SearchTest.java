@@ -41,12 +41,10 @@ public class SearchTest {
 	@Test
 	public void testIsLastElement() {
 		
-		int key = 6;
 		int[] sequence = {2, 3, 4, 5, 6};
-		SearchResult searchResult = BinarySearch.search(key, sequence);
 		
-		int result = searchResult.getPosition();
-		Assert.assertEquals(sequence.length, result);
+		assertThat(BinarySearch.search(6, sequence).isFound(), Matchers.is(true));
+		assertThat(BinarySearch.search(6, sequence).getPosition(), Matchers.is(5));
 	}
 	
 	@Test
