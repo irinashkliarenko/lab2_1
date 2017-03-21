@@ -64,6 +64,15 @@ public class SearchTest {
 	}
 	
 	@Test
+	public void testIsMiddleElementMinusOne() {
+		
+		int[] sequence = {22, 36, 44, 51, 60};
+
+		assertThat(BinarySearch.search(36, sequence).isFound(), Matchers.is(true));
+		assertThat(BinarySearch.search(36, sequence).getPosition(), Matchers.is(sequence.length/2));
+	}
+	
+	@Test
 	public void testIsNotInSequenceWhenOverOne() {
 		
 		int[] sequence = {2, 3, 4, 5, 6};
