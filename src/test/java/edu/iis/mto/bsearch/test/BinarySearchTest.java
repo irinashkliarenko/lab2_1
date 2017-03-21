@@ -69,4 +69,13 @@ public class BinarySearchTest {
 		int[] emptyArray = new int[0];
 		BinarySearch.search(0, emptyArray);
 	}
+	
+	@org.junit.Test
+	public void testFindMiddleElement() {
+		int searched = 40;
+		int[] seq = new int[] {searched - 3, searched - 2, searched - 1, searched, searched + 1, searched + 2, searched +3};
+		SearchResult result = BinarySearch.search(searched, seq);
+		assertThat(result.getPosition(), equalTo(seq.length/2));
+		assertThat(result.isFound(), is(true));
+	}
 }
