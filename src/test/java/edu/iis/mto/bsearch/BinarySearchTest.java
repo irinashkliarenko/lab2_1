@@ -40,4 +40,11 @@ public class BinarySearchTest {
         Assert.assertTrue(result.getPosition()==seq.length);
     }
 
+    @Test public void testIfKeyIsInTheMiddleInSeq() {
+        int key = 3;
+        int[] seq = {1,3,5};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertTrue(result.isFound());
+        Assert.assertTrue(result.getPosition()==2);
+    }
 }
