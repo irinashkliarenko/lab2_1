@@ -67,4 +67,14 @@ public class SearchResultTest {
         
         BinarySearch.search(key, seq);
     }
+    
+    @Test
+    public void middleElementsInSequenceWithEvenNumberOfElements() {
+    	 int key = 4;
+         int seq[] = {1, 2, 3, 4, 7, 8};
+
+    	 int middleElement = seq.length/2 + 1;
+         
+         Assert.assertThat(BinarySearch.search(key, seq).getPosition(), is(equalTo(middleElement)));
+    }
 }
