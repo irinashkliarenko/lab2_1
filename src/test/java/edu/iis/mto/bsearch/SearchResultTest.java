@@ -40,7 +40,7 @@ public class SearchResultTest {
         int seq[] = {1, 2, 3, 4, 7};
         int lastElement = seq.length;
         
-        Assert.assertEquals(lastElement, BinarySearch.search(key, seq).getPosition());
+        Assert.assertThat(BinarySearch.search(key, seq).getPosition(), is(equalTo(lastElement)));
     }
     
     @Test
@@ -49,7 +49,7 @@ public class SearchResultTest {
         int seq[] = {1, 2, 3, 4, 7};
         int middleElement = seq.length/2 + 1;
         
-        Assert.assertEquals(middleElement, BinarySearch.search(key, seq).getPosition());
+        Assert.assertThat(BinarySearch.search(key, seq).getPosition(), is(equalTo(middleElement)));
     }
     
     @Test
@@ -57,7 +57,7 @@ public class SearchResultTest {
         int key = 17;
         int seq[] = {1, 2, 3, 4, 7};
         
-        Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
+        Assert.assertThat((BinarySearch.search(key, seq)).isFound(), is(equalTo(false)));
     }
     
     @Test(expected = IllegalArgumentException.class)
@@ -65,6 +65,6 @@ public class SearchResultTest {
         int key = 17;
         int seq[] = {};
         
-        Assert.assertTrue((BinarySearch.search(key, seq)).isFound());
+        BinarySearch.search(key, seq);
     }
 }
