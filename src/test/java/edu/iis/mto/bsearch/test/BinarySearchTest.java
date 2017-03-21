@@ -1,6 +1,7 @@
 package edu.iis.mto.bsearch.test;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 import org.junit.BeforeClass;
 import edu.iis.mto.bsearch.*;
 
@@ -24,42 +25,42 @@ public class BinarySearchTest {
 	@org.junit.Test
 	public void testNr1() {
 		SearchResult result = BinarySearch.search(IN_SEQUENCE, oneElementArray);
-		assertEquals(0, result.getPosition());
-		assertEquals(true, result.isFound());
+		assertThat(result.getPosition(), equalTo(0));
+		assertThat(result.isFound(), is(true));
 	}
 	
 	@org.junit.Test
 	public void testNr2() {
 		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, oneElementArray);
-		assertEquals(-1, result.getPosition());
-		assertEquals(false, result.isFound());
+		assertThat(result.getPosition(), equalTo(-1));
+		assertThat(result.isFound(), is(false));
 	}
 	
 	@org.junit.Test
 	public void testNr3() {
 		SearchResult result = BinarySearch.search(FIRST_ELEMENT, arrayUnderTest);
-		assertEquals(0, result.getPosition());
-		assertEquals(true, result.isFound());
+		assertThat(result.getPosition(), equalTo(0));
+		assertThat(result.isFound(), is(true));
 	}
 	
 	@org.junit.Test
 	public void testNr4() {
 		SearchResult result = BinarySearch.search(LAST_ELEMENT, arrayUnderTest);
-		assertEquals(arrayUnderTest.length-1, result.getPosition());
-		assertEquals(true, result.isFound());
+		assertThat(result.getPosition(), equalTo(arrayUnderTest.length-1));
+		assertThat(result.isFound(), is(true));
 	}
 	
 	@org.junit.Test
 	public void testNr5() {
 		SearchResult result = BinarySearch.search(MIDDLE_ELEMENT, arrayUnderTest);
-		assertEquals(arrayUnderTest.length/2, result.getPosition());
-		assertEquals(true, result.isFound());
+		assertThat(result.getPosition(), equalTo(arrayUnderTest.length/2));
+		assertThat(result.isFound(), is(true));
 	}
 	
 	@org.junit.Test
 	public void testNr6() {
 		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
-		assertEquals(-1, result.getPosition());
-		assertEquals(false, result.isFound());
+		assertThat(result.getPosition(), equalTo(-1));
+		assertThat(result.isFound(), is(false));
 	}
 }
