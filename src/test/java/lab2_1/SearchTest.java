@@ -50,12 +50,10 @@ public class SearchTest {
 	@Test
 	public void testIsMiddleElement() {
 		
-		int key = 4;
 		int[] sequence = {2, 3, 4, 5, 6};
-		SearchResult searchResult = BinarySearch.search(key, sequence);
-		
-		int result = searchResult.getPosition();
-		Assert.assertEquals(sequence.length/2 + 1, result);
+
+		assertThat(BinarySearch.search(4, sequence).isFound(), Matchers.is(true));
+		assertThat(BinarySearch.search(4, sequence).getPosition(), Matchers.is(sequence.length/2 + 1));
 	}
 	
 	@Test
