@@ -23,4 +23,12 @@ public class BinarySearchTest {
         Assert.assertTrue(!result.isFound());
         Assert.assertTrue(result.getPosition()==-1);
     }
+
+    @Test public void testIfKeyIsFirstInSeq (){
+        int key = 5;
+        int[] seq = {2,5,7};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertTrue(result.isFound());
+        Assert.assertTrue(result.getPosition()==1);
+    }
 }
