@@ -18,7 +18,7 @@ public class BinarySearch {
      * znaleziony -1)
      */
     public static SearchResult search(int key, int[] seq) {
-        if(seq.length==0){
+        if (seq.length == 0) {
             throw new IllegalArgumentException();
         }
 
@@ -33,12 +33,12 @@ public class BinarySearch {
                 result.setPosition(center + 1);
                 break;
             } else {
-                if (seq[center] < key)
+                if (seq[center] < key) {
                     start = center + 1;
-                else
+                } else {
                     end = center - 1;
+                }
             }
-
         }
         return result;
     }
