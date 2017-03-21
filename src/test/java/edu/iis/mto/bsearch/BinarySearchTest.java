@@ -64,5 +64,20 @@ public class BinarySearchTest {
         SearchResult result = BinarySearch.search(key,seq);
     }
 
+    @Test public void testSeqForNonExistingKey_OddSeq(){
+        int key = 9;
+        int[] seq = {2,4,6,8,10,12,14};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertThat(result.isFound(),is(equalTo(false)));
+        Assert.assertThat(result.getPosition(),is(equalTo(-1)));
+    }
+
+    @Test public void testSeqForNonExistingKey_EvenSeq(){
+        int key = 3;
+        int[] seq = {2,4,6,8,10,12};
+        SearchResult result = BinarySearch.search(key,seq);
+        Assert.assertThat(result.isFound(),is(equalTo(false)));
+        Assert.assertThat(result.getPosition(),is(equalTo(-1)));
+    }
 }
 
