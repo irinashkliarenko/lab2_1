@@ -36,4 +36,22 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(FIRST_ELEMENT, arrayUnderTest);
 		Assert.assertEquals(true, result.isFound());
 	}
+	
+	@org.junit.Test
+	public void testNr4() {
+		SearchResult result = BinarySearch.search(LAST_ELEMENT, arrayUnderTest);
+		Assert.assertEquals(true, result.isFound());
+	}
+	
+	@org.junit.Test
+	public void testNr5() {
+		SearchResult result = BinarySearch.search(MIDDLE_ELEMENT, arrayUnderTest);
+		Assert.assertEquals(true, result.isFound());
+	}
+	
+	@org.junit.Test
+	public void testNr6() {
+		SearchResult result = BinarySearch.search(NOT_IN_SEQUENCE, arrayUnderTest);
+		Assert.assertEquals(false, result.isFound());
+	}
 }
