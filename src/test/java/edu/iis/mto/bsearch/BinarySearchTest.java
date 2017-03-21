@@ -15,4 +15,12 @@ public class BinarySearchTest {
         Assert.assertTrue(result.isFound());
         Assert.assertTrue(result.getPosition()==1);
     }
+
+    @Test public void testIfKeyDoesntExistInSeq (){
+        int key = 3;
+        int[] seq = {4};
+        SearchResult result = BinarySearch.search(key, seq);
+        Assert.assertTrue(!result.isFound());
+        Assert.assertTrue(result.getPosition()==-1);
+    }
 }
