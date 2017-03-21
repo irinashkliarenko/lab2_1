@@ -1,10 +1,10 @@
 package edu.iis.mto.bsearch;
 
-import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
+import static org.hamcrest.CoreMatchers.*;
 
-import junit.framework.Assert;
 
 
 public class SearchResultTest {
@@ -14,7 +14,7 @@ public class SearchResultTest {
         int key = 1;
         int seq[] = {1};
         
-        Assert.assertTrue((BinarySearch.search(key, seq)).isFound());
+        Assert.assertThat((BinarySearch.search(key, seq)).isFound(), is(equalTo(true)));
     }
     
     @Test
@@ -22,7 +22,7 @@ public class SearchResultTest {
         int key = 6;
         int seq[] = {1};
         
-        Assert.assertFalse((BinarySearch.search(key, seq)).isFound());
+        Assert.assertThat((BinarySearch.search(key, seq)).isFound(), is(equalTo(false)));
     }
     
     @Test
@@ -31,7 +31,7 @@ public class SearchResultTest {
         int seq[] = {1, 2, 3, 4, 7};
         int fisrtElement = seq.length - (seq.length-1);
         
-        Assert.assertEquals(fisrtElement, BinarySearch.search(key, seq).getPosition());
+        Assert.assertThat(BinarySearch.search(key, seq).getPosition(), is(equalTo(fisrtElement)));
     }
     
     @Test
@@ -67,5 +67,4 @@ public class SearchResultTest {
         
         Assert.assertTrue((BinarySearch.search(key, seq)).isFound());
     }
-
 }
