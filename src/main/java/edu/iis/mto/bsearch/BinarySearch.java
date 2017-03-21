@@ -37,7 +37,6 @@ public class BinarySearch {
 				else
 					end = center - 1;
 			}
-
 		}
 		return result;
 	}
