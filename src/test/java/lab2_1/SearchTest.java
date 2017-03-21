@@ -1,5 +1,7 @@
 package lab2_1;
 
+import org.hamcrest.Matchers;
+import static org.junit.Assert.*;
 import org.junit.Assert;
 
 import org.junit.Test;
@@ -11,13 +13,11 @@ public class SearchTest {
 
 	@Test
 	public void testIsInSequence() {
-		
-		int key = 2;
+
 		int[] sequence = {2};
-		SearchResult searchResult = BinarySearch.search(key, sequence);
 		
-		boolean result = searchResult.isFound();
-		Assert.assertEquals(true, result);
+		assertThat(BinarySearch.search(2, sequence).isFound(), Matchers.is(true));
+		assertThat(BinarySearch.search(2, sequence).getPosition(), Matchers.is(1));
 	}
 	
 	@Test
