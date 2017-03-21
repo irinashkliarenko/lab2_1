@@ -21,6 +21,10 @@ public class BinarySearch {
 	 *         znaleziony -1)
 	 */
 	public static SearchResult search(int key, int[] seq) {
+		
+		if(seq.length < 1) {
+			throw new IllegalArgumentException("Empty sequence");
+		}
 		int start = 0;
 		int end = seq.length - 1;
 		int center;
